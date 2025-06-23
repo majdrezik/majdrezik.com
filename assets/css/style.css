@@ -1296,6 +1296,33 @@ section {
   .radio-interviews .card p {
     font-size: 0.95rem;
   }
+  /* Move and shrink Swiper arrows for both carousels */
+  .testimonials-slider .swiper-button-next,
+  .testimonials-slider .swiper-button-prev,
+  .radio-interviews-slider .swiper-button-next,
+  .radio-interviews-slider .swiper-button-prev {
+    top: auto;
+    bottom: 10px;
+    transform: none;
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    z-index: 10;
+  }
+  .testimonials-slider .swiper-button-prev,
+  .radio-interviews-slider .swiper-button-prev {
+    left: 10px;
+    right: auto;
+  }
+  .testimonials-slider .swiper-button-next,
+  .radio-interviews-slider .swiper-button-next {
+    right: 10px;
+    left: auto;
+  }
+  .testimonials-slider,
+  .radio-interviews-slider {
+    padding-bottom: 40px;
+  }
 }
 @media (max-width: 575.98px) {
   .radio-interviews .card {
