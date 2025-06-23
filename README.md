@@ -16,34 +16,10 @@ This is the source code for my personal website, built to showcase my interests,
 
 ---
 
-## Adding Radio Interviews
-
-1. **Add your interview image** to `assets/img/`.
-2. **Add your MP3 audio file** to `assets/audio/`.
-3. In `index.html`, find the Radio Interviews section and add a new Swiper slide:
-   ```html
-   <div class="swiper-slide">
-     <div class="card h-100 text-center p-3">
-       <img src="assets/img/your-image.jpg" ... >
-       <h4>Your Interview Title</h4>
-       <audio controls>
-         <source src="assets/audio/your-audio.mp3" type="audio/mpeg">
-         Your browser does not support the audio element.
-       </audio>
-       <p class="mt-3">Description of the interview.</p>
-     </div>
-   </div>
-   ```
-4. Save and reload the site.
-
----
-
-
 ## Responsive Design
 
 - The site is fully responsive and mobile-friendly.
 - Carousels (testimonials, radio interviews) use Swiper.js and are touch-friendly.
-- Only one audio can play at a time in the radio interviews section.
 
 ---
 
