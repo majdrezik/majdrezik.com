@@ -284,7 +284,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/MeTelAviv.jpeg") top right no-repeat;
+  background: url("../img/me_dolomites.png") center no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -1226,4 +1226,87 @@ section {
 
 #footer .credits {
   font-size: 13px;
+}
+
+/* === Radio Interviews Section === */
+.radio-interviews .card {
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07), 0 1.5px 4px rgba(0,0,0,0.03);
+  border: none;
+  background: #fff;
+  border-radius: 16px;
+  transition: box-shadow 0.2s;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.radio-interviews .card img {
+  max-width: 180px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display: block;
+}
+.radio-interviews .card h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.radio-interviews .card audio {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  display: block;
+}
+.radio-interviews .card p {
+  font-size: 1rem;
+  margin-top: 1rem;
+  color: #444;
+}
+.radio-interviews-slider .swiper-pagination {
+  margin-top: 20px;
+  position: static;
+}
+.radio-interviews-slider .swiper-button-next,
+.radio-interviews-slider .swiper-button-prev {
+  color: #007bff;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  margin-top: -18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+@media (max-width: 767.98px) {
+  .radio-interviews .card {
+    padding: 1rem 0.5rem;
+    min-height: 340px;
+  }
+  .radio-interviews .card img {
+    max-width: 120px;
+    height: 120px;
+  }
+  .radio-interviews .card h4 {
+    font-size: 1rem;
+  }
+  .radio-interviews .card p {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .radio-interviews .card {
+    padding: 0.5rem 0.2rem;
+    min-height: 260px;
+  }
+  .radio-interviews .card img {
+    max-width: 90px;
+    height: 90px;
+  }
+  .radio-interviews .card audio {
+    max-width: 100%;
+  }
 }

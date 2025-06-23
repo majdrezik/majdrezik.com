@@ -243,9 +243,48 @@
     },
     slidesPerView: 'auto',
     pagination: {
-      el: '.swiper-pagination',
+      el: '.testimonials-slider .swiper-pagination',
       type: 'bullets',
       clickable: true
+    },
+    navigation: {
+      nextEl: '.testimonials-slider .swiper-button-next',
+      prevEl: '.testimonials-slider .swiper-button-prev',
+    }
+  });
+
+  /**
+   * Radio Interviews slider
+   */
+  new Swiper('.radio-interviews-slider', {
+    speed: 600,
+    loop: false,
+    autoplay: false,
+    slidesPerView: 1.15,
+    centeredSlides: true,
+    spaceBetween: 24,
+    pagination: {
+      el: '.radio-interviews-slider .swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    navigation: {
+      nextEl: '.radio-interviews-slider .swiper-button-next',
+      prevEl: '.radio-interviews-slider .swiper-button-prev',
+    },
+    breakpoints: {
+      576: {
+        slidesPerView: 1.15,
+        centeredSlides: true
+      },
+      768: {
+        slidesPerView: 1.3,
+        centeredSlides: true
+      },
+      992: {
+        slidesPerView: 1.5,
+        centeredSlides: true
+      }
     }
   });
 
@@ -265,5 +304,19 @@
    * Initiate Pure Counter 
    */
   new PureCounter();
+
+  /**
+   * Only one audio plays at a time in radio interviews
+   */
+  document.addEventListener('play', function(e){
+    if (e.target.tagName === 'AUDIO') {
+      const audios = document.querySelectorAll('#radio-interviews audio');
+      audios.forEach(audio => {
+        if (audio !== e.target) {
+          audio.pause();
+        }
+      });
+    }
+  }, true);
 
 })()
