@@ -38,6 +38,7 @@ This is the source code for my personal website, built to showcase my interests,
 
 ---
 
+
 ## Responsive Design
 
 - The site is fully responsive and mobile-friendly.
