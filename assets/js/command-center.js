@@ -42,8 +42,8 @@
         return;
       }
 
-      // Racks live only in the right gutter, clear of the left-aligned hero copy
-      const zoneL = Math.max(w * 0.55, w - 420);
+      // Racks live only in the far-right gutter, clear of the centered hero copy
+      const zoneL = Math.max(w * 0.68, w - 340);
       const zoneR = w - 12;
 
       // Depth rows: farther = smaller, dimmer, higher up
