@@ -5,612 +5,662 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Majd Rezik</title>
+  <title>Majd Rezik — DevOps Engineer | Software Architect | Entrepreneur</title>
   <meta
-    content="My personal website is a digital space that I've created to showcase my interests, skills, and experiences. The website serves as an online hub where visitors can learn more about me, my work, and my accomplishments."
+    content="Majd Rezik — DevOps Engineer, Software Architect & Entrepreneur. B.Sc Software Engineering. Cloud infrastructure, CI/CD, Full-Stack. Personal command center at majdrezik.com."
     name="description">
   <meta
-    content="Majd Rezik, MAJD REZIK, majd rezik, majdrezik, majdrezik.com, Majd rezik, Majd Rizik, Majd Rezek, majd rezek, majd rizik, majd, Majd, Majd R, majd_rezik, majdrizik, majdrezek"
+    content="Majd Rezik, MAJD REZIK, majd rezik, majdrezik, majdrezik.com, Majd rezik, Majd Rizik, Majd Rezek, majd rezek, majd rizik, DevOps, Software Engineer, Entrepreneur"
     name="keywords">
 
-  <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
+  <!-- Fonts: Space Grotesk + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icons -->
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: MyResume - v4.10.0
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- Command Center stylesheet -->
+  <link href="assets/css/command-center.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex flex-column justify-content-center">
+  <!-- ======= Status-bar Nav ======= -->
+  <nav class="cc-nav" id="cc-nav" aria-label="Primary">
+    <a href="#hero" class="cc-nav__brand">
+      <span class="cc-nav__status" aria-hidden="true"></span>
+      majdrezik@cloud:~
+    </a>
 
-    <nav id="navbar" class="navbar nav-menu">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-book-content"></i><span>Testimonials</span></a></li>
-        <li><a href="#radio-interviews" class="nav-link scrollto"><i class="bx bx-microphone"></i> <span>Radio Interviews</span></a></li>
-        <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Skills</span></a></li>
-        <li><a href="#facts" class="nav-link scrollto"><i class="bx bx-bar-chart"></i> <span>Facts</span></a></li>
-        <!-- <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li> -->
-      </ul>
-    </nav><!-- .nav-menu -->
+    <ul class="cc-nav__links">
+      <li><a href="#hero" class="active">/boot</a></li>
+      <li><a href="#about">/about</a></li>
+      <li><a href="#metrics">/metrics</a></li>
+      <li><a href="#skills">/skills</a></li>
+      <li><a href="#reviews">/reviews</a></li>
+      <li><a href="#broadcasts">/radio</a></li>
+    </ul>
 
-  </header><!-- End Header -->
+    <div class="cc-nav__meta">
+      <span>region: global</span>
+      <span class="uptime">uptime <span id="uptime">00:00:00</span></span>
+    </div>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Majd Rezik</h1>
-      <p><span class="typed" data-typed-items="Software Engineer, DevOps, Developer, Full Stack, Entrepreneur"></span>
+    <button class="cc-nav__burger" id="nav-burger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="cc-nav__mobile" id="nav-mobile">
+    <a href="#hero">/boot</a>
+    <a href="#about">/about</a>
+    <a href="#metrics">/metrics</a>
+    <a href="#skills">/skills</a>
+    <a href="#reviews">/reviews</a>
+    <a href="#broadcasts">/radio</a>
+  </div>
+
+  <!-- ======= Hero — Boot Sequence ======= -->
+  <section id="hero">
+    <canvas id="topology-canvas" aria-hidden="true"></canvas>
+    <div class="hero-vignette" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="boot-log" id="boot-log" aria-live="polite"></div>
+
+      <h1 class="hero-name">Majd Rezik</h1>
+
+      <p class="hero-roles" id="hero-roles" aria-label="Professional roles">
+        <!-- filled by JS typewriter -->
       </p>
-      <div class="social-links">
-        <a href="https://twitter.com/MajdRezik" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.facebook.com/majd.rezik.6/" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/majdrezik/" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://github.com/majdrezik" class="google-plus"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/majdrezik/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
+      <div class="hero-cta">
+        <a href="#about" class="btn-primary">
+          <i class="bi bi-terminal"></i> Explore System Profile
+        </a>
+        <button type="button" class="btn-ghost" onclick="document.getElementById('bot-fab').click()">
+          <i class="bi bi-chat-dots"></i> Open majd-bot
+        </button>
+      </div>
+
+      <div class="hero-social">
+        <a href="https://twitter.com/MajdRezik" aria-label="Twitter" target="_blank" rel="noopener"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/majd.rezik.6/" aria-label="Facebook" target="_blank" rel="noopener"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/majdrezik/" aria-label="Instagram" target="_blank" rel="noopener"><i class="bx bxl-instagram"></i></a>
+        <a href="https://github.com/majdrezik" aria-label="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/majdrezik/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
-  </section><!-- End Hero -->
 
-
+    <div class="scroll-hint" aria-hidden="true">scroll</div>
+  </section>
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>As a DevOps Engineer with a Bachelor's degree in Software Engineering and experience as a Full Stack
+    <!-- ======= About — System Profile ======= -->
+    <section id="about" class="cc-section">
+      <div class="cc-container">
+        <div class="reveal">
+          <div class="section-label">system.profile</div>
+          <h2 class="section-title">About</h2>
+          <p class="section-lead">
+            As a DevOps Engineer with a Bachelor's degree in Software Engineering and experience as a Full Stack
             Developer and Entrepreneur, I bring a unique perspective to my work. I have a deep understanding of the
             software development lifecycle and I'm well-versed in a variety of programming languages and technologies.
           </p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="assets/img/me_aws.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>DevOps &amp; Web Developer.</h3>
-            <br>
-            <p class="fst-italic">
-              In my role as a DevOps Engineer, I enjoy collaborating with teams to identify areas for improvement and
-              implement solutions that increase productivity and reduce risk. I am skilled in continuous integration and
-              delivery (CI/CD) tools such as Teamcity, and I have experience working with cloud platforms like AWS.
-              <br>
-              <br>
-              <br>
-              As a Full Stack Developer, I have experience working on both the front-end and back-end of applications.
-              I'm skilled in programming languages such as JavaScript, Python, and Java. This allows me to have a
-              holistic view of the application and understand how different parts of the system interact with each
-              other.
-            </p>
-            <br>
-            <br>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>12 June 1998</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.majdrezik.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+972 50 248 3972</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>B.Sc Software
-                      Engineering</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>majdrezik@gmail.com</span>
-                  </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-            <br>
-            <br>
-            <p>
-              My experience as an entrepreneur has taught me the importance of being resourceful and finding creative
-              solutions to problems. I am passionate about helping teams work more efficiently and effectively, and I
-              strive to implement DevOps best practices that enable teams to deliver high-quality software faster.
-
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>What people experience when working with me</h2>
-        </div>
-
-        
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-
-            <div class="swiper-slide"> <!-- Start testimonial item -->
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
-                <h3>Hadass Gur Hadar</h3>
-                <h4>Business Development & Marketing Manager at Galil Software Ltd.</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I had the pleasure of working with Majd on a project aimed at connecting Galil Software’s DevOps expertise with our Sales & Marketing goals. Majd not only brought valuable technical insight but also authored an article that showcased our capabilities—published on our website and social channels, it performed exceptionally well.
-                  He’s a man of many talents: technically sharp, business-aware, and a natural communicator. 
-                  A true asset in any cross-functional effort!
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-
-            <div class="swiper-slide"> <!-- Start testimonial item -->
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
-                <h3>David Zonsheine</h3>
-                <h4>VP Sales and Marketing @ Galil Software Ltd. | Driving growth through near-shore software services</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I had the pleasure of working closely with Majd during a company-wide initiative to connect Sales with other departments. Majd was the DevOps representative—and he truly stood out.
-                  He managed to break down complex technical processes in a way that made them accessible and valuable to our team. His ability to communicate, collaborate, and take initiative made a real impact on how we present our platform to clients.
-                  Majd isn’t just a talented DevOps engineer—he’s a team player who understands the bigger picture. I genuinely enjoyed working with him and look forward to seeing his continued success.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
-                <h3>Asia Salner</h3>
-                <h4>Director of Devops & CORO's Infra solution architect</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I take great pride in Majd's association with our team and highly recommend him for his exceptional skill sets and impeccable professionalism. His involvement in any project ensures the delivery of the highest standards of quality and innovation.
-Majd has demonstrated himself as a notable DevOps team member, exhibiting exceptional learning agility and organizational skills. His commitment and intelligence are evident in every project he undertakes.
-His contributions have not only enhanced our operational efficiency but have also brought innovative solutions to complex challenges. As his manager, I am continually impressed by his dedication and the smart strategies he employs in his work.
-Majd's meticulous approach ensures that projects are completed efficiently and flawlessly. He profoundly grasps DevOps principles, which he adeptly employs in our dynamic work environment.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
-                <h3>Hans Shakur</h3>
-                <h4>Tech Entrepreneur | Corporate Consultant | Startup Business Strategist and Growth Catalyst | Ecosystem Builder | Board Member | Lecturer | Radio Host</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Well versed young talent, entrepreneurial mind and soul, problem solver and information security engineer. Positive attitude, awesome character, maverick talent!
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
-                <h3>Dr. Zakharia Frenkel</h3>
-                <h4>Co-founder &amp; CEO at Healthspace LTD | Senior Lecturer ORT Braude College of Engineering</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  As a final project supervisor in Braude college, I am glad to recommend Majd as a talent and active
-                  person. He is really able to work, learn, understand and solve problems. He has also very good
-                  communicative abilities, with perfect English. It was really nice to supervise him.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt=""> -->
-                <h3>Fadi Swidan</h3>
-                <h4>VP Marketing and Business Development at Takwin VC| BizDevExec club| Mentor| FIRST| GGA |IVLP |
-                  Industrial Engineering & management| MBA| Social Impact Investments| NSCF| Building startups|
-                  Accelerating Entrepreneurship</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I mentored Majd directly and worked with him several times.
-                  I highly recommend Majd as a software engineer as he's gifted and knows his way around people.
-                  Majd is a talented hard-working SW engineer with great communication and interpersonal skills,
-                  furthermore, he's very good with people and has the ability to maximize their potential.
-                  Anyone would be lucky to have Majd as a colleague.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt=""> -->
-                <h3>Dr. Emil Saucan</h3>
-                <h4>Lecturer and Researcher, Department of Applied Mathematics</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Although Majd was my student only in one course (namely Calculus 1), I was impressed by his abilities,
-                  his natural mathematical talent and his enthusiasm for the subject matter and mathematics in general.
-                  Indeed, even after finishing the course, he continued inquiring about a number of interesting, deep
-                  problems. Furthermore, besides being a gifted and diligent student, Majd has an outgoing, open
-                  personality that allows him to easily integrate in a variety of social groups. I am convinced that
-                  anyone working with Majd would profit enormously from having such a talented, hardworking and pleasant
-                  collaborator.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt=""> -->
-                <h3>Dr. Elena Kleiman</h3>
-                <h4>Lecturer and Researcher, Department of Software Engineering</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I had a pleasure to teach Majd at two very important and challenging courses in our Software
-                  Engineering program, Data Structures and Algorithms, for two consecutive semesters. I've got a very
-                  good impression from Majd as a student. He punctually attended all lectures, actively participated and
-                  asked thoughtful questions. From the talks that we had at the reception hours, I perceive Majd as a
-                  serious and enthusiastic student, eager to learn, and I am sure he will add value to your company.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt=""> -->
-                <h3>Dr. Wael Mattar</h3>
-                <h4>Applied Mathematician | PhD Student at Tel Aviv University</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  At a personal level, Majd is a well disciplined and passionate about everything he does. Throughout
-                  the course I taught him, he demonstrated great perseverance and innovation. Not only he was interested
-                  in and motivated to learn the material, he also put great work into assimilating it to his own
-                  experience and developing his own ideas. Over and above, Majd always tries to model problems
-                  mathematically, he has advanced analytical skills indeed.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt=""> -->
-                <h3>Jeries Haddad</h3>
-                <h4>Senior Software Engineer @ Amdocs</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  One of the smartest and most hardworking people I ever met. Very strong self learning & problem
-                  solving skills, can basically learn anything alone and get good at it in no time.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt=""> -->
-                <h3>Miras Safadi</h3>
-                <h4>Senior Software Engineer @ BMC</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Majd is the most extremely talented, hard working fellow I've ever met. He possesses a high ability of
-                  self learning; he can learn anything new in little to no time. He can also solve hard problems in
-                  creative ways which no one has thought of.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <!-- <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt=""> -->
-                <h3>Fares Jaraisy</h3>
-                <h4>Senior Software Engineer @ Nvidia</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Majd is an intelligent student and fast learner. I study with him sometimes and I am always impressed
-                  by his abilities of finding solutions for hard problems. he is always seeking to learn new things in
-                  the software field.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Radio Interviews Section ======= -->
-    <section id="radio-interviews" class="radio-interviews section-bg">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Radio Interviews</h2>
-          <p>Listen to my featured radio interviews below.</p>
-        </div>
-        <div class="radio-interviews-slider swiper">
-          <div class="swiper-wrapper">
-            <!-- Interview 1 -->
-            <div class="swiper-slide">
-              <div class="card h-100 text-center p-3">
-                <img src="assets/img/radio_1.png" class="img-fluid rounded mb-3 mx-auto d-block" alt="Interview 1">
-                <h4>Cybersecurity in Crisis: Inside the 16 Billion Password Leak</h4>
-                <audio controls style="width: 100%; max-width: 400px; margin: 0 auto;">
-                  <source src="assets/audio/radio_1.mp3" type="audio/mpeg">
-                  Your browser does not support the audio element.
-                </audio>
-                <p class="mt-3">A record-breaking 16 billion passwords have been leaked in what's being called the largest data breach in history. In this interview, we break down how it happened, who’s affected, and what steps you should take right now to protect your accounts.</p>
-              </div>
-            </div>
-            <!-- Interview 2 -->
-            <div class="swiper-slide">
-              <div class="card h-100 text-center p-3">
-                <img src="assets/img/radio_2.jpg" class="img-fluid rounded mb-3 mx-auto d-block" alt="Interview 2">
-                <h4>Scams in the Shadows: The New Face of Cybercrime</h4>
-                <audio controls style="width: 100%; max-width: 400px; margin: 0 auto;">
-                  <source src="assets/audio/radio_2.mp3" type="audio/mpeg">
-                  Your browser does not support the audio element.
-                </audio>
-                <p class="mt-3">Cyber fraud has become a multi-billion-dollar industry. In this segment, we explore real examples of scams, how they trick even smart people, and what you can do to stay secure.</p>
-              </div>
-            </div>
-            <!-- Interview 3 -->
-            <div class="swiper-slide">
-              <div class="card h-100 text-center p-3">
-                <img src="assets/img/radio_3.jpg" class="img-fluid rounded mb-3 mx-auto d-block" alt="Interview 3">
-                <h4>Updates Without a Download: How Tech Companies Change Your Apps Instantly</h4>
-                <audio controls style="width: 100%; max-width: 400px; margin: 0 auto;">
-                  <source src="assets/audio/radio_3.mp3" type="audio/mpeg">
-                  Your browser does not support the audio element.
-                </audio>
-                <p class="mt-3">Think your apps only change when you update them? Think again. We explore how new features are added behind the scenes — without disrupting your experience.</p>
-              </div>
-            </div>
-            <!-- Interview 4 -->
-            <div class="swiper-slide">
-              <div class="card h-100 text-center p-3">
-                <img src="assets/img/radio_4.png" class="img-fluid rounded mb-3 mx-auto d-block" alt="Interview 4">
-                <h4>From Hackathon to Lifesaver: The Story Behind Zero-Aid</h4>
-                <audio controls style="width: 100%; max-width: 400px; margin: 0 auto;">
-                  <source src="assets/audio/radio_4.mp3" type="audio/mpeg">
-                  Your browser does not support the audio element.
-                </audio>
-                <p class="mt-3">In this interview, I share how my friend Simaan Saada and I won first place at UltraHack2020, a hackathon organized by Tsofen, with support from entrepreneur Hans Shakur. We developed Zero-Aid — a smart ring that provides urgent medical help at the touch of a finger using live location, video, and audio. Built in just 72 hours during the COVID-19 crisis, it’s a story of perseverance and the power of tech to save lives.</p>
-              </div>
-            </div>
-            <!--  -->
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </div>
-    </section><!-- End Radio Interviews Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>My selected technical aptitudes.</p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">Version control</span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Continuous Integration servers</span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Configuration management</span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Network protocols</span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
+        <div class="about-grid reveal">
+          <div class="about-photo">
+            <img src="assets/img/me_aws.png" alt="Majd Rezik — DevOps Engineer">
+            <div class="about-photo__badge">status: online · freelance: available</div>
           </div>
 
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">Deployment automation</span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-dots"><span></span><span></span><span></span></div>
+              <span>~/profile.yaml</span>
             </div>
+            <div class="panel-body">
+              <p class="about-role">DevOps Engineer &amp; Web Developer</p>
 
-            <div class="progress">
-              <span class="skill">Containers</span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
+              <p class="about-bio">
+                In my role as a DevOps Engineer, I enjoy collaborating with teams to identify areas for improvement and
+                implement solutions that increase productivity and reduce risk. I am skilled in continuous integration and
+                delivery (CI/CD) tools such as Teamcity, and I have experience working with cloud platforms like AWS.
+              </p>
+              <p class="about-bio">
+                As a Full Stack Developer, I have experience working on both the front-end and back-end of applications.
+                I'm skilled in programming languages such as JavaScript, Python, and Java. This allows me to have a
+                holistic view of the application and understand how different parts of the system interact with each
+                other.
+              </p>
+
+              <ul class="profile-kv">
+                <li>
+                  <span class="key">Birthday</span>
+                  <span class="val">12 June 1998</span>
+                </li>
+                <li>
+                  <span class="key">Website</span>
+                  <span class="val"><a href="https://www.majdrezik.com">www.majdrezik.com</a></span>
+                </li>
+                <li>
+                  <span class="key">Phone</span>
+                  <span class="val"><a href="tel:+972502483972">+972 50 248 3972</a></span>
+                </li>
+                <li>
+                  <span class="key">Degree</span>
+                  <span class="val">B.Sc Software Engineering</span>
+                </li>
+                <li>
+                  <span class="key">Email</span>
+                  <span class="val"><a href="mailto:majdrezik@gmail.com">majdrezik@gmail.com</a></span>
+                </li>
+                <li>
+                  <span class="key">Freelance</span>
+                  <span class="val" style="color: var(--neon-green)">Available</span>
+                </li>
+              </ul>
+
+              <p class="about-bio" style="margin-bottom:0">
+                My experience as an entrepreneur has taught me the importance of being resourceful and finding creative
+                solutions to problems. I am passionate about helping teams work more efficiently and effectively, and I
+                strive to implement DevOps best practices that enable teams to deliver high-quality software faster.
+              </p>
             </div>
-
-            <div class="progress">
-              <span class="skill">Infrastructure Orchestration</span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Monitoring and analytics</span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-
           </div>
         </div>
       </div>
-      </div>
-    </section><!-- End Skills Section -->
+    </section>
 
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Facts</h2>
-          <p>I absolutely love life and cherish my family above all else. As an entrepreneur, I don't wait for
+    <!-- ======= Metrics — Observability Dashboard ======= -->
+    <section id="metrics" class="cc-section cc-section--alt">
+      <div class="cc-container">
+        <div class="reveal">
+          <div class="section-label">observability.dashboard</div>
+          <h2 class="section-title">Infrastructure Metrics</h2>
+          <p class="section-lead">
+            I absolutely love life and cherish my family above all else. As an entrepreneur, I don't wait for
             opportunities to come my way; instead, I proactively create them. I am driven by the passion to make a
-            positive impact in the world and leave a lasting legacy for future generations.</p>
+            positive impact in the world and leave a lasting legacy for future generations.
+          </p>
         </div>
 
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Happy Clients</p>
+        <div class="metrics-grid reveal">
+          <div class="metric-card" data-count>
+            <div class="metric-card__top">
+              <span class="metric-card__label">Happy Clients</span>
+              <span class="metric-card__status">healthy</span>
+            </div>
+            <div class="metric-card__value">
+              <span data-target="7">0</span><span class="metric-card__unit">n</span>
+            </div>
+            <div class="metric-card__spark" aria-hidden="true">
+              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
+                <path class="area" d="M0,30 L15,28 L30,22 L45,24 L60,16 L75,18 L90,10 L105,12 L120,6 L120,36 L0,36 Z"/>
+                <path d="M0,30 L15,28 L30,22 L45,24 L60,16 L75,18 L90,10 L105,12 L120,6"/>
+              </svg>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="97" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Projects</p>
+          <div class="metric-card" data-count>
+            <div class="metric-card__top">
+              <span class="metric-card__label">Projects</span>
+              <span class="metric-card__status">healthy</span>
+            </div>
+            <div class="metric-card__value">
+              <span data-target="97">0</span><span class="metric-card__unit">n</span>
+            </div>
+            <div class="metric-card__spark" aria-hidden="true">
+              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
+                <path class="area" d="M0,28 L20,26 L40,20 L60,22 L80,12 L100,14 L120,4 L120,36 L0,36 Z"/>
+                <path d="M0,28 L20,26 L40,20 L60,22 L80,12 L100,14 L120,4"/>
+              </svg>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="186" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Books Read</p>
+          <div class="metric-card" data-count>
+            <div class="metric-card__top">
+              <span class="metric-card__label">Books Read</span>
+              <span class="metric-card__status">healthy</span>
+            </div>
+            <div class="metric-card__value">
+              <span data-target="186">0</span><span class="metric-card__unit">n</span>
+            </div>
+            <div class="metric-card__spark" aria-hidden="true">
+              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
+                <path class="area" d="M0,32 L15,30 L30,26 L45,20 L60,18 L75,14 L90,10 L105,8 L120,4 L120,36 L0,36 Z"/>
+                <path d="M0,32 L15,30 L30,26 L45,20 L60,18 L75,14 L90,10 L105,8 L120,4"/>
+              </svg>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="41" data-purecounter-duration="1"
-                class="purecounter"></span>
-              <p>Awards</p>
+          <div class="metric-card" data-count>
+            <div class="metric-card__top">
+              <span class="metric-card__label">Awards</span>
+              <span class="metric-card__status">healthy</span>
+            </div>
+            <div class="metric-card__value">
+              <span data-target="41">0</span><span class="metric-card__unit">n</span>
+            </div>
+            <div class="metric-card__spark" aria-hidden="true">
+              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
+                <path class="area" d="M0,26 L20,24 L40,28 L60,16 L80,18 L100,8 L120,10 L120,36 L0,36 Z"/>
+                <path d="M0,26 L20,24 L40,28 L60,16 L80,18 L100,8 L120,10"/>
+              </svg>
             </div>
           </div>
-
         </div>
-
       </div>
-    </section><!-- End Facts Section -->
+    </section>
 
-    <!-- ======= Services Section ======= -->
-    <!-- (Remove this entire section) -->
+    <!-- ======= Skills — Architecture Topology ======= -->
+    <section id="skills" class="cc-section">
+      <div class="cc-container">
+        <div class="reveal">
+          <div class="section-label">architecture.topology</div>
+          <h2 class="section-title">Skill Topology</h2>
+          <p class="section-lead">My selected technical aptitudes — grouped as interdependent architectural layers. Hover a node to illuminate connected systems.</p>
+        </div>
 
-  </main><!-- End #main -->
+        <div class="skill-layers reveal">
+
+          <div class="skill-layer" data-layer="provisioning">
+            <div class="skill-layer__header">
+              <h3 class="skill-layer__title">
+                <span class="layer-id">L0</span>
+                Provisioning Layer
+              </h3>
+              <span class="skill-layer__meta">source · config · net</span>
+            </div>
+            <div class="skill-nodes">
+              <span class="skill-node" data-skill="git">Version control<span class="pct">93%</span></span>
+              <span class="skill-node" data-skill="config">Configuration management<span class="pct">92%</span></span>
+              <span class="skill-node" data-skill="network">Network protocols<span class="pct">93%</span></span>
+              <span class="skill-node" data-skill="security">InfoSec<span class="pct">—</span></span>
+            </div>
+          </div>
+
+          <div class="skill-layer" data-layer="containers">
+            <div class="skill-layer__header">
+              <h3 class="skill-layer__title">
+                <span class="layer-id">L1</span>
+                Containerization
+              </h3>
+              <span class="skill-layer__meta">runtime · isolation</span>
+            </div>
+            <div class="skill-nodes">
+              <span class="skill-node" data-skill="containers">Containers<span class="pct">90%</span></span>
+              <span class="skill-node" data-skill="docker">Docker<span class="pct">—</span></span>
+              <span class="skill-node" data-skill="k8s">Kubernetes<span class="pct">—</span></span>
+            </div>
+          </div>
+
+          <div class="skill-layer" data-layer="cicd">
+            <div class="skill-layer__header">
+              <h3 class="skill-layer__title">
+                <span class="layer-id">L2</span>
+                CI/CD Pipeline
+              </h3>
+              <span class="skill-layer__meta">build · ship · release</span>
+            </div>
+            <div class="skill-nodes">
+              <span class="skill-node" data-skill="ci">Continuous Integration servers<span class="pct">94%</span></span>
+              <span class="skill-node" data-skill="teamcity">TeamCity<span class="pct">—</span></span>
+              <span class="skill-node" data-skill="cd">CD Pipelines<span class="pct">—</span></span>
+              <span class="skill-node" data-skill="deploy">Deployment automation<span class="pct">80%</span></span>
+            </div>
+          </div>
+
+          <div class="skill-layer" data-layer="infra">
+            <div class="skill-layer__header">
+              <h3 class="skill-layer__title">
+                <span class="layer-id">L3</span>
+                Infrastructure &amp; Observability
+              </h3>
+              <span class="skill-layer__meta">cloud · orch · metrics</span>
+            </div>
+            <div class="skill-nodes">
+              <span class="skill-node" data-skill="orch">Infrastructure Orchestration<span class="pct">91%</span></span>
+              <span class="skill-node" data-skill="aws">AWS<span class="pct">—</span></span>
+              <span class="skill-node" data-skill="monitor">Monitoring and analytics<span class="pct">98%</span></span>
+              <span class="skill-node" data-skill="analytics">Analytics<span class="pct">—</span></span>
+            </div>
+          </div>
+
+          <div class="skill-layer" data-layer="app">
+            <div class="skill-layer__header">
+              <h3 class="skill-layer__title">
+                <span class="layer-id">L4</span>
+                Application Layer
+              </h3>
+              <span class="skill-layer__meta">full-stack · languages</span>
+            </div>
+            <div class="skill-nodes">
+              <span class="skill-node" data-skill="js">JavaScript<span class="pct">—</span></span>
+              <span class="skill-node" data-skill="python">Python<span class="pct">—</span></span>
+              <span class="skill-node" data-skill="java">Java<span class="pct">—</span></span>
+              <span class="skill-node" data-skill="fullstack">Full-Stack Development<span class="pct">—</span></span>
+            </div>
+          </div>
+
+        </div>
+        <p class="topology-hint">⌘ Hover any node to trace interdependencies across layers</p>
+      </div>
+    </section>
+
+    <!-- ======= Reviews — System Log Approvals ======= -->
+    <section id="reviews" class="cc-section cc-section--alt">
+      <div class="cc-container">
+        <div class="reveal">
+          <div class="section-label">peer.reviews · pull-request.approvals</div>
+          <h2 class="section-title">What people experience when working with me</h2>
+          <p class="section-lead">Professional recommendations rendered as approved system log reviews.</p>
+        </div>
+
+        <div class="reviews-grid reveal">
+
+          <!-- Hadass Gur Hadar -->
+          <article class="review-card">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #101 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">Hadass Gur Hadar</h3>
+              <p class="review-card__role">Business Development &amp; Marketing Manager at Galil Software Ltd.</p>
+              <p class="review-card__quote">I had the pleasure of working with Majd on a project aimed at connecting Galil Software’s DevOps expertise with our Sales &amp; Marketing goals. Majd not only brought valuable technical insight but also authored an article that showcased our capabilities—published on our website and social channels, it performed exceptionally well. He’s a man of many talents: technically sharp, business-aware, and a natural communicator. A true asset in any cross-functional effort!</p>
+            </div>
+          </article>
+
+          <!-- David Zonsheine -->
+          <article class="review-card">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #102 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">David Zonsheine</h3>
+              <p class="review-card__role">VP Sales and Marketing @ Galil Software Ltd. | Driving growth through near-shore software services</p>
+              <p class="review-card__quote">I had the pleasure of working closely with Majd during a company-wide initiative to connect Sales with other departments. Majd was the DevOps representative—and he truly stood out. He managed to break down complex technical processes in a way that made them accessible and valuable to our team. His ability to communicate, collaborate, and take initiative made a real impact on how we present our platform to clients. Majd isn’t just a talented DevOps engineer—he’s a team player who understands the bigger picture. I genuinely enjoyed working with him and look forward to seeing his continued success.</p>
+            </div>
+          </article>
+
+          <!-- Asia Salner -->
+          <article class="review-card">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #103 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">Asia Salner</h3>
+              <p class="review-card__role">Director of Devops &amp; CORO's Infra solution architect</p>
+              <p class="review-card__quote">I take great pride in Majd's association with our team and highly recommend him for his exceptional skill sets and impeccable professionalism. His involvement in any project ensures the delivery of the highest standards of quality and innovation. Majd has demonstrated himself as a notable DevOps team member, exhibiting exceptional learning agility and organizational skills. His commitment and intelligence are evident in every project he undertakes. His contributions have not only enhanced our operational efficiency but have also brought innovative solutions to complex challenges. As his manager, I am continually impressed by his dedication and the smart strategies he employs in his work. Majd's meticulous approach ensures that projects are completed efficiently and flawlessly. He profoundly grasps DevOps principles, which he adeptly employs in our dynamic work environment.</p>
+            </div>
+          </article>
+
+          <!-- Hans Shakur -->
+          <article class="review-card">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #104 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">Hans Shakur</h3>
+              <p class="review-card__role">Tech Entrepreneur | Corporate Consultant | Startup Business Strategist and Growth Catalyst | Ecosystem Builder | Board Member | Lecturer | Radio Host</p>
+              <p class="review-card__quote">Well versed young talent, entrepreneurial mind and soul, problem solver and information security engineer. Positive attitude, awesome character, maverick talent!</p>
+            </div>
+          </article>
+
+          <!-- Dr. Zakharia Frenkel -->
+          <article class="review-card">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #105 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">Dr. Zakharia Frenkel</h3>
+              <p class="review-card__role">Co-founder &amp; CEO at Healthspace LTD | Senior Lecturer ORT Braude College of Engineering</p>
+              <p class="review-card__quote">As a final project supervisor in Braude college, I am glad to recommend Majd as a talent and active person. He is really able to work, learn, understand and solve problems. He has also very good communicative abilities, with perfect English. It was really nice to supervise him.</p>
+            </div>
+          </article>
+
+          <!-- Fadi Swidan -->
+          <article class="review-card">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #106 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">Fadi Swidan</h3>
+              <p class="review-card__role">VP Marketing and Business Development at Takwin VC| BizDevExec club| Mentor| FIRST| GGA |IVLP | Industrial Engineering &amp; management| MBA| Social Impact Investments| NSCF| Building startups| Accelerating Entrepreneurship</p>
+              <p class="review-card__quote">I mentored Majd directly and worked with him several times. I highly recommend Majd as a software engineer as he's gifted and knows his way around people. Majd is a talented hard-working SW engineer with great communication and interpersonal skills, furthermore, he's very good with people and has the ability to maximize their potential. Anyone would be lucky to have Majd as a colleague.</p>
+            </div>
+          </article>
+
+          <!-- Dr. Emil Saucan — initially hidden -->
+          <article class="review-card is-hidden" style="display:none">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #107 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">Dr. Emil Saucan</h3>
+              <p class="review-card__role">Lecturer and Researcher, Department of Applied Mathematics</p>
+              <p class="review-card__quote">Although Majd was my student only in one course (namely Calculus 1), I was impressed by his abilities, his natural mathematical talent and his enthusiasm for the subject matter and mathematics in general. Indeed, even after finishing the course, he continued inquiring about a number of interesting, deep problems. Furthermore, besides being a gifted and diligent student, Majd has an outgoing, open personality that allows him to easily integrate in a variety of social groups. I am convinced that anyone working with Majd would profit enormously from having such a talented, hardworking and pleasant collaborator.</p>
+            </div>
+          </article>
+
+          <!-- Dr. Elena Kleiman -->
+          <article class="review-card is-hidden" style="display:none">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #108 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">Dr. Elena Kleiman</h3>
+              <p class="review-card__role">Lecturer and Researcher, Department of Software Engineering</p>
+              <p class="review-card__quote">I had a pleasure to teach Majd at two very important and challenging courses in our Software Engineering program, Data Structures and Algorithms, for two consecutive semesters. I've got a very good impression from Majd as a student. He punctually attended all lectures, actively participated and asked thoughtful questions. From the talks that we had at the reception hours, I perceive Majd as a serious and enthusiastic student, eager to learn, and I am sure he will add value to your company.</p>
+            </div>
+          </article>
+
+          <!-- Dr. Wael Mattar -->
+          <article class="review-card is-hidden" style="display:none">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #109 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">Dr. Wael Mattar</h3>
+              <p class="review-card__role">Applied Mathematician | PhD Student at Tel Aviv University</p>
+              <p class="review-card__quote">At a personal level, Majd is a well disciplined and passionate about everything he does. Throughout the course I taught him, he demonstrated great perseverance and innovation. Not only he was interested in and motivated to learn the material, he also put great work into assimilating it to his own experience and developing his own ideas. Over and above, Majd always tries to model problems mathematically, he has advanced analytical skills indeed.</p>
+            </div>
+          </article>
+
+          <!-- Jeries Haddad -->
+          <article class="review-card is-hidden" style="display:none">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #110 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">Jeries Haddad</h3>
+              <p class="review-card__role">Senior Software Engineer @ Amdocs</p>
+              <p class="review-card__quote">One of the smartest and most hardworking people I ever met. Very strong self learning &amp; problem solving skills, can basically learn anything alone and get good at it in no time.</p>
+            </div>
+          </article>
+
+          <!-- Miras Safadi -->
+          <article class="review-card is-hidden" style="display:none">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #111 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">Miras Safadi</h3>
+              <p class="review-card__role">Senior Software Engineer @ BMC</p>
+              <p class="review-card__quote">Majd is the most extremely talented, hard working fellow I've ever met. He possesses a high ability of self learning; he can learn anything new in little to no time. He can also solve hard problems in creative ways which no one has thought of.</p>
+            </div>
+          </article>
+
+          <!-- Fares Jaraisy -->
+          <article class="review-card is-hidden" style="display:none">
+            <div class="review-card__chrome">
+              <span class="review-card__badge"><i class="bi bi-check2-circle"></i> APPROVED</span>
+              <span>pr #112 · merge ready</span>
+            </div>
+            <div class="review-card__body">
+              <h3 class="review-card__author">Fares Jaraisy</h3>
+              <p class="review-card__role">Senior Software Engineer @ Nvidia</p>
+              <p class="review-card__quote">Majd is an intelligent student and fast learner. I study with him sometimes and I am always impressed by his abilities of finding solutions for hard problems. he is always seeking to learn new things in the software field.</p>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="reviews-more">
+          <button type="button" class="btn-ghost" id="reviews-more-btn">
+            <i class="bi bi-chevron-down"></i> Load remaining reviews (6)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Radio — Broadcast Logs ======= -->
+    <section id="broadcasts" class="cc-section">
+      <div class="cc-container">
+        <div class="reveal">
+          <div class="section-label">broadcast.logs</div>
+          <h2 class="section-title">Radio Interviews</h2>
+          <p class="section-lead">Listen to my featured radio interviews below.</p>
+        </div>
+
+        <div class="broadcast-grid reveal">
+
+          <article class="broadcast-card">
+            <div class="broadcast-card__img">
+              <img src="assets/img/radio_1.png" alt="Cybersecurity in Crisis interview">
+            </div>
+            <div class="broadcast-card__content">
+              <div class="broadcast-card__freq">TX · FREQ 01 · LIVE ARCHIVE</div>
+              <h3>Cybersecurity in Crisis: Inside the 16 Billion Password Leak</h3>
+              <audio controls preload="none">
+                <source src="assets/audio/radio_1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>A record-breaking 16 billion passwords have been leaked in what's being called the largest data breach in history. In this interview, we break down how it happened, who’s affected, and what steps you should take right now to protect your accounts.</p>
+            </div>
+          </article>
+
+          <article class="broadcast-card">
+            <div class="broadcast-card__img">
+              <img src="assets/img/radio_2.jpg" alt="Scams in the Shadows interview">
+            </div>
+            <div class="broadcast-card__content">
+              <div class="broadcast-card__freq">TX · FREQ 02 · LIVE ARCHIVE</div>
+              <h3>Scams in the Shadows: The New Face of Cybercrime</h3>
+              <audio controls preload="none">
+                <source src="assets/audio/radio_2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>Cyber fraud has become a multi-billion-dollar industry. In this segment, we explore real examples of scams, how they trick even smart people, and what you can do to stay secure.</p>
+            </div>
+          </article>
+
+          <article class="broadcast-card">
+            <div class="broadcast-card__img">
+              <img src="assets/img/radio_3.jpg" alt="Updates Without a Download interview">
+            </div>
+            <div class="broadcast-card__content">
+              <div class="broadcast-card__freq">TX · FREQ 03 · LIVE ARCHIVE</div>
+              <h3>Updates Without a Download: How Tech Companies Change Your Apps Instantly</h3>
+              <audio controls preload="none">
+                <source src="assets/audio/radio_3.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>Think your apps only change when you update them? Think again. We explore how new features are added behind the scenes — without disrupting your experience.</p>
+            </div>
+          </article>
+
+          <article class="broadcast-card">
+            <div class="broadcast-card__img">
+              <img src="assets/img/radio_4.png" alt="Zero-Aid hackathon interview">
+            </div>
+            <div class="broadcast-card__content">
+              <div class="broadcast-card__freq">TX · FREQ 04 · LIVE ARCHIVE</div>
+              <h3>From Hackathon to Lifesaver: The Story Behind Zero-Aid</h3>
+              <audio controls preload="none">
+                <source src="assets/audio/radio_4.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>In this interview, I share how my friend Simaan Saada and I won first place at UltraHack2020, a hackathon organized by Tsofen, with support from entrepreneur Hans Shakur. We developed Zero-Aid — a smart ring that provides urgent medical help at the touch of a finger using live location, video, and audio. Built in just 72 hours during the COVID-19 crisis, it’s a story of perseverance and the power of tech to save lives.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="container">
-      <h3>Majd Rezik</h3>
+    <div class="cc-container">
+      <h3>majdrezik@cloud:~$</h3>
       <p>Thank you for visiting my website! I am thrilled to have had the opportunity to share my services with you. I
         hope we can work together in the future and please feel free to reach out to me anytime to stay in touch.</p>
-      <div class="social-links">
-        <a href="https://twitter.com/MajdRezik" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="https://www.facebook.com/majd.rezik.6/" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/majdrezik/" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/majdrezik/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://github.com/majdrezik" class="google-plus"><i class="bi bi-github"></i></a>
+      <div class="footer-social">
+        <a href="https://twitter.com/MajdRezik" aria-label="Twitter" target="_blank" rel="noopener"><i class="bx bxl-twitter"></i></a>
+        <a href="https://www.facebook.com/majd.rezik.6/" aria-label="Facebook" target="_blank" rel="noopener"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/majdrezik/" aria-label="Instagram" target="_blank" rel="noopener"><i class="bx bxl-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/majdrezik/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i></a>
+        <a href="https://github.com/majdrezik" aria-label="GitHub" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>Majd Rezik</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
+        &copy; Copyright <strong>Majd Rezik</strong>. All Rights Reserved
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <!-- Back to top -->
+  <a href="#hero" class="back-to-top" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- ======= majd-bot v1.0 Terminal ======= -->
+  <button type="button" class="bot-fab" id="bot-fab" aria-label="Open majd-bot terminal">
+    <span class="bot-icon">&gt;_</span>
+    <span>bot</span>
+  </button>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <div class="bot-terminal" id="bot-terminal" role="dialog" aria-label="majd-bot terminal">
+    <div class="bot-terminal__header">
+      <span>majd-bot <span class="ver">v1.0</span></span>
+      <button type="button" class="bot-terminal__close" id="bot-close" aria-label="Close terminal">&times;</button>
+    </div>
+    <div class="bot-terminal__output" id="bot-output"></div>
+    <div class="bot-prompts">
+      <button type="button" class="bot-prompt-btn" data-cmd="/skills">/skills</button>
+      <button type="button" class="bot-prompt-btn" data-cmd="/experience">/experience</button>
+      <button type="button" class="bot-prompt-btn" data-cmd="/about">/about</button>
+      <button type="button" class="bot-prompt-btn" data-cmd="/contact">/contact</button>
+      <button type="button" class="bot-prompt-btn" data-cmd="/radio">/radio</button>
+      <button type="button" class="bot-prompt-btn" data-cmd="/help">/help</button>
+    </div>
+    <div class="bot-terminal__input-row">
+      <span class="prompt-char">❯</span>
+      <input type="text" class="bot-terminal__input" id="bot-input" placeholder="type a command…" autocomplete="off" spellcheck="false">
+    </div>
+  </div>
 
+  <script src="assets/js/command-center.js"></script>
 </body>
 
 </html>
