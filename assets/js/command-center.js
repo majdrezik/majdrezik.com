@@ -13,11 +13,12 @@
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
-    let w, h, nodes, raf;
+    let w, h, nodes, racks, raf;
     const NODE_COUNT = 48;
     const MAX_DIST = 140;
     const GREEN = "0, 255, 157";
     const CYAN = "0, 212, 255";
+    const AMBER = "245, 166, 35";
 
     function resize() {
       const rect = canvas.parentElement.getBoundingClientRect();
@@ -28,6 +29,156 @@
       ctx.setTransform(window.devicePixelRatio || 1, 0, 0, window.devicePixelRatio || 1, 0, 0);
       w = rect.width;
       h = rect.height;
+    }
+
+    /* ---- Data-center racks — right side only (keep text clear) ---- */
+    function createServers() {
+      racks = [];
+      const now = performance.now();
+
+      // On narrow screens the copy spans the width — skip racks to avoid clutter
+      if (w < 720) {
+        racks._aisles = [];
+        return;
+      }
+
+      // Racks live only in the right gutter, clear of the left-aligned hero copy
+      const zoneL = Math.max(w * 0.55, w - 420);
+      const zoneR = w - 12;
+
+      // Depth rows: farther = smaller, dimmer, higher up
+      const rows = [
+        { scale: 0.52, alpha: 0.38, yFrac: 0.16, cols: 4 },
+        { scale: 0.66, alpha: 0.52, yFrac: 0.30, cols: 4 },
+        { scale: 0.82, alpha: 0.7, yFrac: 0.44, cols: 3 },
+        { scale: 0.98, alpha: 0.88, yFrac: 0.58, cols: 3 },
+        { scale: 1.12, alpha: 1.0, yFrac: 0.74, cols: 2 },
+      ];
+
+      function buildRack(x, y, rackW, rackH, depthAlpha) {
+        const units = Math.max(5, Math.round(rackH / 20));
+        const unitH = (rackH - 10) / units;
+        const leds = [];
+        for (let u = 0; u < units; u++) {
+          const uy = y + 5 + u * unitH + unitH / 2;
+          const ledCount = 3 + Math.floor(Math.random() * 3);
+          for (let l = 0; l < ledCount; l++) {
+            const roll = Math.random();
+            const color = roll > 0.88 ? AMBER : roll > 0.5 ? CYAN : GREEN;
+            leds.push({
+              x: x + 7 + l * Math.max(5.5, rackW * 0.09),
+              y: uy,
+              color,
+              on: Math.random() > 0.4,
+              next: now + 200 + Math.random() * 2400,
+              level: Math.random(),
+              r: Math.max(1.3, 1.7 * (rackW / 70)),
+            });
+          }
+          leds.push({
+            x: x + rackW - Math.max(11, rackW * 0.16),
+            y: uy,
+            color: Math.random() > 0.65 ? CYAN : GREEN,
+            on: Math.random() > 0.3,
+            next: now + 150 + Math.random() * 1400,
+            level: Math.random(),
+            bar: true,
+            barW: Math.max(5, rackW * 0.11),
+          });
+        }
+        racks.push({
+          x, y, w: rackW, h: rackH, units, unitH, leds, depthAlpha,
+        });
+      }
+
+      for (const row of rows) {
+        const baseW = 52 * row.scale;
+        const baseH = 118 * row.scale;
+        const gap = 8 + 6 * row.scale;
+        const y = h * row.yFrac;
+
+        // Pack columns from the right edge leftward, stop at the text zone
+        for (let i = 0; i < row.cols; i++) {
+          const x = zoneR - baseW - i * (baseW + gap);
+          if (x < zoneL) break;
+          buildRack(x, y, baseW, baseH, row.alpha);
+        }
+      }
+
+      racks._aisles = [
+        { x1: zoneL + 8, y: h * 0.88, x2: zoneR },
+        { x1: zoneL + 20, y: h * 0.55, x2: zoneR },
+        { x1: zoneL + 32, y: h * 0.38, x2: zoneR },
+      ];
+    }
+
+    function drawServers(now) {
+      if (racks._aisles) {
+        for (const a of racks._aisles) {
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(${GREEN}, 0.07)`;
+          ctx.lineWidth = 1;
+          ctx.moveTo(a.x1, a.y);
+          ctx.lineTo(a.x2, a.y);
+          ctx.stroke();
+        }
+      }
+
+      for (const rack of racks) {
+        if (!rack.leds) continue;
+        const da = rack.depthAlpha;
+
+        ctx.fillStyle = `rgba(6, 12, 18, ${0.45 * da})`;
+        ctx.fillRect(rack.x, rack.y, rack.w, rack.h);
+
+        ctx.strokeStyle = `rgba(${GREEN}, ${0.2 * da})`;
+        ctx.lineWidth = 1;
+        ctx.strokeRect(rack.x, rack.y, rack.w, rack.h);
+
+        ctx.fillStyle = `rgba(${CYAN}, ${0.12 * da})`;
+        ctx.fillRect(rack.x, rack.y, rack.w, 2);
+
+        ctx.strokeStyle = `rgba(${GREEN}, ${0.1 * da})`;
+        for (let u = 1; u < rack.units; u++) {
+          const uy = rack.y + 5 + u * rack.unitH;
+          ctx.beginPath();
+          ctx.moveTo(rack.x + 2, uy);
+          ctx.lineTo(rack.x + rack.w - 2, uy);
+          ctx.stroke();
+        }
+
+        for (const led of rack.leds) {
+          if (now >= led.next) {
+            led.on = !led.on;
+            led.next = now + (led.on ? 400 + Math.random() * 2200 : 160 + Math.random() * 1000);
+          }
+          const target = led.on ? 1 : 0.08;
+          led.level += (target - led.level) * 0.1;
+
+          const a = (0.22 + led.level * 0.85) * da;
+          if (led.bar) {
+            const bw = led.barW || 7;
+            ctx.fillStyle = `rgba(${led.color}, ${a})`;
+            ctx.fillRect(led.x, led.y - 1.4, bw, 2.8);
+            if (led.level > 0.45) {
+              ctx.fillStyle = `rgba(${led.color}, ${(led.level - 0.45) * 0.4 * da})`;
+              ctx.fillRect(led.x - 1.5, led.y - 3, bw + 3, 6);
+            }
+          } else {
+            const r = led.r || 1.6;
+            ctx.beginPath();
+            ctx.fillStyle = `rgba(${led.color}, ${a})`;
+            ctx.arc(led.x, led.y, r, 0, Math.PI * 2);
+            ctx.fill();
+            if (led.level > 0.35) {
+              ctx.beginPath();
+              ctx.fillStyle = `rgba(${led.color}, ${(led.level - 0.35) * 0.28 * da})`;
+              ctx.arc(led.x, led.y, r * 3.2, 0, Math.PI * 2);
+              ctx.fill();
+            }
+          }
+        }
+      }
     }
 
     function createNodes() {
@@ -60,6 +211,9 @@
 
     function draw() {
       ctx.clearRect(0, 0, w, h);
+
+      // Server racks sit behind the mesh
+      drawServers(performance.now());
 
       // Connections
       for (let i = 0; i < nodes.length; i++) {
@@ -128,11 +282,13 @@
 
     resize();
     createNodes();
+    createServers();
     draw();
 
     window.addEventListener("resize", () => {
       resize();
       createNodes();
+      createServers();
     });
 
     // Pause when tab hidden
@@ -276,25 +432,49 @@
 
     // Connection map: skill id -> related skill ids
     const links = {
-      git: ["ci", "cd", "config"],
-      ci: ["git", "containers", "cd", "teamcity"],
-      teamcity: ["ci", "cd", "deploy"],
-      config: ["git", "orch", "aws"],
-      network: ["monitor", "aws", "security"],
-      deploy: ["cd", "containers", "orch", "aws"],
-      containers: ["ci", "orch", "deploy", "docker", "k8s"],
-      docker: ["containers", "k8s", "ci"],
-      k8s: ["containers", "orch", "docker", "monitor"],
-      orch: ["containers", "config", "aws", "k8s"],
-      aws: ["orch", "deploy", "monitor", "network"],
-      monitor: ["aws", "network", "analytics"],
-      analytics: ["monitor"],
-      js: ["python", "java", "fullstack"],
-      python: ["js", "java", "fullstack"],
-      java: ["js", "python", "fullstack"],
-      fullstack: ["js", "python", "java", "git"],
-      security: ["network", "aws", "config"],
-      cd: ["ci", "deploy", "teamcity", "git"],
+      git: ["ci", "cd", "config", "gha", "bash"],
+      linux: ["bash", "nginx", "docker", "network", "security"],
+      bash: ["linux", "git", "deploy", "ci"],
+      ci: ["git", "containers", "cd", "teamcity", "gha", "artifact"],
+      teamcity: ["ci", "cd", "deploy", "artifact"],
+      gha: ["ci", "git", "cd", "deploy"],
+      config: ["git", "orch", "aws", "ansible", "terraform"],
+      ansible: ["config", "linux", "deploy", "terraform"],
+      terraform: ["aws", "azure", "orch", "config", "ansible", "iam"],
+      network: ["monitor", "aws", "security", "nginx", "ssl"],
+      security: ["network", "aws", "config", "ssl", "iam"],
+      ssl: ["security", "nginx", "network"],
+      deploy: ["cd", "containers", "orch", "aws", "artifact"],
+      artifact: ["ci", "cd", "deploy", "teamcity"],
+      containers: ["ci", "orch", "deploy", "docker", "k8s", "compose", "microservices"],
+      docker: ["containers", "k8s", "ci", "compose"],
+      compose: ["docker", "containers", "microservices"],
+      k8s: ["containers", "orch", "docker", "monitor", "microservices"],
+      microservices: ["k8s", "containers", "api", "docker"],
+      orch: ["containers", "config", "aws", "k8s", "terraform"],
+      aws: ["orch", "deploy", "monitor", "network", "iam", "terraform", "azure"],
+      azure: ["aws", "orch", "deploy", "monitor", "terraform", "iam"],
+      iam: ["aws", "azure", "security", "terraform", "network"],
+      nginx: ["network", "ssl", "linux", "deploy"],
+      monitor: ["aws", "network", "analytics", "grafana", "elk"],
+      grafana: ["monitor", "analytics", "elk"],
+      elk: ["monitor", "grafana", "analytics"],
+      analytics: ["monitor", "grafana", "elk"],
+      js: ["python", "java", "fullstack", "nodejs", "react"],
+      nodejs: ["js", "api", "fullstack", "react"],
+      react: ["js", "nodejs", "fullstack"],
+      python: ["js", "java", "fullstack", "api"],
+      java: ["js", "python", "fullstack", "api"],
+      sql: ["api", "fullstack", "python", "java"],
+      api: ["fullstack", "nodejs", "microservices", "sql"],
+      fullstack: ["js", "python", "java", "git", "nodejs", "react", "api"],
+      cd: ["ci", "deploy", "teamcity", "git", "gha"],
+      agile: ["comms", "product", "saleseng"],
+      comms: ["writing", "saleseng", "agile"],
+      saleseng: ["comms", "entrepreneur", "product", "writing"],
+      entrepreneur: ["product", "saleseng", "writing"],
+      product: ["entrepreneur", "agile", "fullstack"],
+      writing: ["comms", "saleseng", "entrepreneur"],
     };
 
     nodes.forEach((node) => {
@@ -435,19 +615,35 @@
 
     let booted = false;
 
+    function lockInput() {
+      if (!input) return;
+      input.setAttribute("readonly", "");
+      input.setAttribute("inputmode", "none");
+      input.blur();
+    }
+
+    function unlockInput() {
+      if (!input) return;
+      input.removeAttribute("readonly");
+      input.setAttribute("inputmode", "text");
+      input.focus({ preventScroll: true });
+    }
+
     function open() {
       terminal.classList.add("open");
-      input?.focus();
+      // Keep input locked so prompt taps never summon the mobile keyboard
+      lockInput();
       if (!booted) {
         booted = true;
         print("sys", "majd-bot v1.0 — profile query interface");
-        print("ok", "Session established. Type a command or click a prompt.");
+        print("ok", "Session established. Tap a prompt below, or type a command.");
         print("cyan", "Available: /help  /skills  /experience  /about  /contact  /clear");
       }
     }
 
     function close() {
       terminal.classList.remove("open");
+      lockInput();
     }
 
     fab.addEventListener("click", () => {
@@ -455,6 +651,19 @@
       else open();
     });
     closeBtn?.addEventListener("click", close);
+
+    // Explicit tap on the input row = user wants to type → allow keyboard
+    const inputRow = input?.closest(".bot-terminal__input-row");
+    inputRow?.addEventListener("pointerdown", (e) => {
+      e.stopPropagation();
+      unlockInput();
+    });
+    // If anything tries to focus the locked field, bounce focus away
+    input?.addEventListener("focus", () => {
+      if (input.hasAttribute("readonly")) {
+        input.blur();
+      }
+    });
 
     function print(cls, text) {
       const line = document.createElement("div");
@@ -507,11 +716,12 @@
         await typeLines([
           ["ok", "$ kubectl get skills -n majdrezik --output=wide"],
           ["cyan", "LAYER              NODES"],
-          ["sys", "Provisioning       Git · Config Mgmt · Network Protocols"],
-          ["sys", "Containerization   Docker · Containers · K8s"],
-          ["sys", "CI/CD Pipeline     TeamCity · CI Servers · Deploy Automation"],
-          ["sys", "Infrastructure     AWS · Orchestration · Monitoring"],
-          ["sys", "Application        JavaScript · Python · Java · Full-Stack"],
+          ["sys", "Provisioning       Git · Linux · Bash · Ansible · Terraform · InfoSec"],
+          ["sys", "Containerization   Docker · Compose · K8s · Microservices"],
+          ["sys", "CI/CD Pipeline     TeamCity · GitHub Actions · Deploy Automation"],
+          ["sys", "Infrastructure     AWS · Azure · IAM/VPC · Nginx · Grafana · ELK"],
+          ["sys", "Application        JS · Node · React · Python · Java · SQL · APIs"],
+          ["sys", "Cross-Functional   Agile · Comms · Sales↔Eng · Entrepreneurship"],
           ["ok", "STATUS: all layers healthy · readiness=1/1"],
         ]);
       },
@@ -601,15 +811,23 @@
       if (handler) {
         await handler();
       } else {
-        print("warn", `Command not found: ${cmd}`);
-        print("sys", 'Type /help for available commands.');
+        print("cyan", "Hey — I only understand the prompts listed below for now.");
+        print("sys", "Try: /help  /skills  /experience  /about  /contact  /radio  /clear");
+        print("ok", "We're working on improving majd-bot soon. Stay tuned.");
       }
     }
 
     promptBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
+      btn.addEventListener("pointerdown", () => {
+        // Lock before click settles so iOS never focuses the text field
+        lockInput();
+      });
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        lockInput();
         open();
         runCommand(btn.dataset.cmd);
+        lockInput();
       });
     });
 
