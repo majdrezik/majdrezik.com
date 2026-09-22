@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI gateways are becoming a frontline security risk — Majd Rezik</title>
+  <meta name="description" content="AI infrastructure is moving fast—but attackers are moving with it.">
+  <link href="../assets/img/favicon.ico" rel="icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/command-center.css" rel="stylesheet">
+</head>
+<body class="blog-page">
+  <nav class="cc-nav" aria-label="Primary">
+    <a href="../index.html" class="cc-nav__brand">
+      <span class="cc-nav__status" aria-hidden="true"></span>
+      majdrezik@cloud:~
+    </a>
+    <ul class="cc-nav__links">
+      <li><a href="../index.html#hero">/boot</a></li>
+      <li><a href="../index.html#about">/about</a></li>
+      <li><a href="../index.html#blogs" class="active">/blogs</a></li>
+      <li><a href="../index.html#skills">/skills</a></li>
+      <li><a href="../index.html#broadcasts">/radio</a></li>
+    </ul>
+  </nav>
+
+  <main class="blog-article">
+    <div class="cc-container blog-article__inner">
+      <a class="blog-back" href="index.html"><i class="bi bi-arrow-left"></i> Back to blogs</a>
+      <article class="blog-post panel">
+        <div class="panel-header">
+          <div class="panel-dots"><span></span><span></span><span></span></div>
+          <span>~/blogs/ai-gateways-are-becoming-a-frontline-security-risk.md</span>
+        </div>
+        <div class="panel-body blog-post__body">
+          <div class="blog-post__hero"><img src="../assets/blogs/AI%20gateways%20are%20becoming%20a%20frontline%20security%20risk/AI%20gateways%20are%20becoming%20a%20frontline%20security%20risk.png" alt="AI gateways are becoming a frontline security risk"></div>
+          <div class="section-label">blog.post</div>
+          <h1 class="blog-post__title">AI gateways are becoming a frontline security risk</h1>
+          <div class="blog-post__content">
+            <p>AI infrastructure is moving fast—but attackers are moving with it.</p>
+<p>CISA recently added seven actively exploited vulnerabilities to its Known Exploited Vulnerabilities catalog, including flaws affecting LiteLLM, Kestra, Starlette, JFrog Artifactory, and SonicWall appliances. The affected systems span AI gateways, workflow automation, software supply chains, and remote access. eSecurity Planet</p>
+<p>Why does this matter?</p>
+<p>Because AI gateways and automation platforms often sit in a privileged position. They may have access to model providers, internal APIs, credentials, repositories, and execution environments.</p>
+<p>A compromise is not limited to “the AI service is down.”</p>
+<p>It can become:</p>
+<ul><li>Credential theft</li><li>Arbitrary command execution</li><li>Supply-chain compromise</li><li>Unauthorized access to connected services</li><li>Cryptomining or lateral movement</li></ul>
+<p>The practical takeaway is simple:</p>
+<p>Treat AI infrastructure like production security infrastructure—not like an experimental developer tool.</p>
+<p>That means:</p>
+<ul><li>Patch internet-facing gateways first</li><li>Keep management interfaces off the public internet</li><li>Use short-lived credentials wherever possible</li><li>Restrict outbound access from agent and workflow runtimes</li><li>Monitor unusual tool calls, shell execution, and token usage</li><li>Add AI gateways to your normal vulnerability-management process</li></ul>
+<p>The biggest mistake would be securing the model while ignoring the systems around it.</p>
+<p>In many environments, the attack path will not start with the model.</p>
+<p>It will start with the gateway, workflow engine, plugin, or exposed control plane.</p>
+<div class="blog-tags"><span class="blog-tag">#Cybersecurity</span> <span class="blog-tag">#DevOps</span> <span class="blog-tag">#AIInfrastructure</span> <span class="blog-tag">#CloudSecurity</span> <span class="blog-tag">#Kubernetes</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="cc-container">
+      <h3>majdrezik@cloud:~$</h3>
+      <div class="copyright">&copy; Copyright <strong>Majd Rezik</strong>. All Rights Reserved</div>
+    </div>
+  </footer>
+</body>
+</html>

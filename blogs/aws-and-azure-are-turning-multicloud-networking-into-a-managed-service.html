@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS and Azure are turning multicloud networking into a managed service — Majd Rezik</title>
+  <meta name="description" content="For years, connecting AWS and Azure privately meant coordinating circuits, routers, routing policies, encryption, monitoring, and two separate providers.">
+  <link href="../assets/img/favicon.ico" rel="icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/command-center.css" rel="stylesheet">
+</head>
+<body class="blog-page">
+  <nav class="cc-nav" aria-label="Primary">
+    <a href="../index.html" class="cc-nav__brand">
+      <span class="cc-nav__status" aria-hidden="true"></span>
+      majdrezik@cloud:~
+    </a>
+    <ul class="cc-nav__links">
+      <li><a href="../index.html#hero">/boot</a></li>
+      <li><a href="../index.html#about">/about</a></li>
+      <li><a href="../index.html#blogs" class="active">/blogs</a></li>
+      <li><a href="../index.html#skills">/skills</a></li>
+      <li><a href="../index.html#broadcasts">/radio</a></li>
+    </ul>
+  </nav>
+
+  <main class="blog-article">
+    <div class="cc-container blog-article__inner">
+      <a class="blog-back" href="index.html"><i class="bi bi-arrow-left"></i> Back to blogs</a>
+      <article class="blog-post panel">
+        <div class="panel-header">
+          <div class="panel-dots"><span></span><span></span><span></span></div>
+          <span>~/blogs/aws-and-azure-are-turning-multicloud-networking-into-a-managed-service.md</span>
+        </div>
+        <div class="panel-body blog-post__body">
+          <div class="blog-post__hero"><img src="../assets/blogs/AWS%20and%20Azure%20are%20turning%20multicloud%20networking%20into%20a%20managed%20service/AWS%20and%20Azure%20are%20turning%20multicloud%20networking%20into%20a%20managed%20service.png" alt="AWS and Azure are turning multicloud networking into a managed service"></div>
+          <div class="section-label">blog.post</div>
+          <h1 class="blog-post__title">AWS and Azure are turning multicloud networking into a managed service</h1>
+          <div class="blog-post__content">
+            <p>For years, connecting AWS and Azure privately meant coordinating circuits, routers, routing policies, encryption, monitoring, and two separate providers.</p>
+<p>That is starting to change.</p>
+<p>AWS and Microsoft have introduced interoperable multicloud connectivity in public preview, allowing customers to provision private, high-speed links between AWS and Azure through their respective cloud networking services. The initial preview covers regions including Northern Virginia, Northern California, Sydney, and Frankfurt. Microsoft Azure</p>
+<p>Why does this matter?</p>
+<p>Because the hard part of multicloud is often not running workloads in two clouds.</p>
+<p>It is operating the network between them.</p>
+<p>A managed interconnect can reduce the amount of custom infrastructure teams need to build and maintain for cross-cloud traffic, especially for hybrid application architectures, shared data services, and AI workloads that span providers.</p>
+<p>But there is an important caveat:</p>
+<p>Simpler provisioning does not remove architecture responsibility.</p>
+<p>Your team still owns:</p>
+<ul><li>IP planning and route isolation</li><li>Failure-domain design</li><li>Egress-cost control</li><li>Identity and service-to-service authorization</li><li>Encryption at the workload layer</li><li>Observability across both clouds</li><li>Clear decisions about which data should cross the boundary</li></ul>
+<p>The practical takeaway:</p>
+<p>Use managed connectivity to reduce plumbing—not to avoid designing the network.</p>
+<p>The most resilient multicloud environments will still be the ones with explicit routing, tested failover, bounded blast radius, and clear ownership.</p>
+<p>The network between clouds is becoming easier to create.</p>
+<p>It is still your job to make it safe to depend on.</p>
+<div class="blog-tags"><span class="blog-tag">#CloudNetworking</span> <span class="blog-tag">#MultiCloud</span> <span class="blog-tag">#DevOps</span> <span class="blog-tag">#PlatformEngineering</span> <span class="blog-tag">#CloudArchitecture</span></div>
+<p class="blog-source">Source: Microsoft Azure announcement and AWS multicloud interconnect preview coverage, September 2026.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="cc-container">
+      <h3>majdrezik@cloud:~$</h3>
+      <div class="copyright">&copy; Copyright <strong>Majd Rezik</strong>. All Rights Reserved</div>
+    </div>
+  </footer>
+</body>
+</html>

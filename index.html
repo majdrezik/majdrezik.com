@@ -43,10 +43,11 @@
     <ul class="cc-nav__links">
       <li><a href="#hero" class="active">/boot</a></li>
       <li><a href="#about">/about</a></li>
+      <li><a href="#broadcasts">/radio</a></li>
+      <li><a href="#blogs">/blogs</a></li>
+      <li><a href="#reviews">/reviews</a></li>
       <li><a href="#metrics">/metrics</a></li>
       <li><a href="#skills">/skills</a></li>
-      <li><a href="#reviews">/reviews</a></li>
-      <li><a href="#broadcasts">/radio</a></li>
     </ul>
 
     <div class="cc-nav__meta">
@@ -62,10 +63,11 @@
   <div class="cc-nav__mobile" id="nav-mobile">
     <a href="#hero">/boot</a>
     <a href="#about">/about</a>
+    <a href="#broadcasts">/radio</a>
+    <a href="#blogs">/blogs</a>
+    <a href="#reviews">/reviews</a>
     <a href="#metrics">/metrics</a>
     <a href="#skills">/skills</a>
-    <a href="#reviews">/reviews</a>
-    <a href="#broadcasts">/radio</a>
   </div>
 
   <!-- ======= Hero — Boot Sequence ======= -->
@@ -184,215 +186,225 @@
       </div>
     </section>
 
-    <!-- ======= Metrics — Observability Dashboard ======= -->
-    <section id="metrics" class="cc-section cc-section--alt">
+    <!-- ======= Radio — Broadcast Logs ======= -->
+    <section id="broadcasts" class="cc-section cc-section--alt">
       <div class="cc-container">
         <div class="reveal">
-          <div class="section-label">observability.dashboard</div>
-          <h2 class="section-title">Infrastructure Metrics</h2>
-          <p class="section-lead">
-            I absolutely love life and cherish my family above all else. As an entrepreneur, I don't wait for
-            opportunities to come my way; instead, I proactively create them. I am driven by the passion to make a
-            positive impact in the world and leave a lasting legacy for future generations.
-          </p>
+          <div class="section-label">broadcast.logs</div>
+          <h2 class="section-title">Radio Interviews</h2>
+          <p class="section-lead">Listen to my featured radio interviews below.</p>
         </div>
 
-        <div class="metrics-grid reveal">
-          <div class="metric-card" data-count>
-            <div class="metric-card__top">
-              <span class="metric-card__label">Happy Clients</span>
-              <span class="metric-card__status">healthy</span>
-            </div>
-            <div class="metric-card__value">
-              <span data-target="7">0</span><span class="metric-card__unit">n</span>
-            </div>
-            <div class="metric-card__spark" aria-hidden="true">
-              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
-                <path class="area" d="M0,30 L15,28 L30,22 L45,24 L60,16 L75,18 L90,10 L105,12 L120,6 L120,36 L0,36 Z"/>
-                <path d="M0,30 L15,28 L30,22 L45,24 L60,16 L75,18 L90,10 L105,12 L120,6"/>
-              </svg>
-            </div>
-          </div>
+        <div class="broadcast-grid reveal">
 
-          <div class="metric-card" data-count>
-            <div class="metric-card__top">
-              <span class="metric-card__label">Projects</span>
-              <span class="metric-card__status">healthy</span>
+          <article class="broadcast-card">
+            <div class="broadcast-card__img">
+              <img src="assets/img/radio_1.png" alt="Cybersecurity in Crisis interview">
             </div>
-            <div class="metric-card__value">
-              <span data-target="97">0</span><span class="metric-card__unit">n</span>
+            <div class="broadcast-card__content">
+              <div class="broadcast-card__freq">TX · FREQ 01 · LIVE ARCHIVE</div>
+              <h3>Cybersecurity in Crisis: Inside the 16 Billion Password Leak</h3>
+              <audio controls preload="none">
+                <source src="assets/audio/radio_1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>A record-breaking 16 billion passwords have been leaked in what's being called the largest data breach in history. In this interview, we break down how it happened, who’s affected, and what steps you should take right now to protect your accounts.</p>
             </div>
-            <div class="metric-card__spark" aria-hidden="true">
-              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
-                <path class="area" d="M0,28 L20,26 L40,20 L60,22 L80,12 L100,14 L120,4 L120,36 L0,36 Z"/>
-                <path d="M0,28 L20,26 L40,20 L60,22 L80,12 L100,14 L120,4"/>
-              </svg>
-            </div>
-          </div>
+          </article>
 
-          <div class="metric-card" data-count>
-            <div class="metric-card__top">
-              <span class="metric-card__label">Books Read</span>
-              <span class="metric-card__status">healthy</span>
+          <article class="broadcast-card">
+            <div class="broadcast-card__img">
+              <img src="assets/img/radio_2.jpg" alt="Scams in the Shadows interview">
             </div>
-            <div class="metric-card__value">
-              <span data-target="186">0</span><span class="metric-card__unit">n</span>
+            <div class="broadcast-card__content">
+              <div class="broadcast-card__freq">TX · FREQ 02 · LIVE ARCHIVE</div>
+              <h3>Scams in the Shadows: The New Face of Cybercrime</h3>
+              <audio controls preload="none">
+                <source src="assets/audio/radio_2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>Cyber fraud has become a multi-billion-dollar industry. In this segment, we explore real examples of scams, how they trick even smart people, and what you can do to stay secure.</p>
             </div>
-            <div class="metric-card__spark" aria-hidden="true">
-              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
-                <path class="area" d="M0,32 L15,30 L30,26 L45,20 L60,18 L75,14 L90,10 L105,8 L120,4 L120,36 L0,36 Z"/>
-                <path d="M0,32 L15,30 L30,26 L45,20 L60,18 L75,14 L90,10 L105,8 L120,4"/>
-              </svg>
-            </div>
-          </div>
+          </article>
 
-          <div class="metric-card" data-count>
-            <div class="metric-card__top">
-              <span class="metric-card__label">Awards</span>
-              <span class="metric-card__status">healthy</span>
+          <article class="broadcast-card">
+            <div class="broadcast-card__img">
+              <img src="assets/img/radio_3.jpg" alt="Updates Without a Download interview">
             </div>
-            <div class="metric-card__value">
-              <span data-target="41">0</span><span class="metric-card__unit">n</span>
+            <div class="broadcast-card__content">
+              <div class="broadcast-card__freq">TX · FREQ 03 · LIVE ARCHIVE</div>
+              <h3>Updates Without a Download: How Tech Companies Change Your Apps Instantly</h3>
+              <audio controls preload="none">
+                <source src="assets/audio/radio_3.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>Think your apps only change when you update them? Think again. We explore how new features are added behind the scenes — without disrupting your experience.</p>
             </div>
-            <div class="metric-card__spark" aria-hidden="true">
-              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
-                <path class="area" d="M0,26 L20,24 L40,28 L60,16 L80,18 L100,8 L120,10 L120,36 L0,36 Z"/>
-                <path d="M0,26 L20,24 L40,28 L60,16 L80,18 L100,8 L120,10"/>
-              </svg>
+          </article>
+
+          <article class="broadcast-card">
+            <div class="broadcast-card__img">
+              <img src="assets/img/radio_4.png" alt="Zero-Aid hackathon interview">
             </div>
-          </div>
+            <div class="broadcast-card__content">
+              <div class="broadcast-card__freq">TX · FREQ 04 · LIVE ARCHIVE</div>
+              <h3>From Hackathon to Lifesaver: The Story Behind Zero-Aid</h3>
+              <audio controls preload="none">
+                <source src="assets/audio/radio_4.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              <p>In this interview, I share how my friend Simaan Saada and I won first place at UltraHack2020, a hackathon organized by Tsofen, with support from entrepreneur Hans Shakur. We developed Zero-Aid — a smart ring that provides urgent medical help at the touch of a finger using live location, video, and audio. Built in just 72 hours during the COVID-19 crisis, it’s a story of perseverance and the power of tech to save lives.</p>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ======= Skills — Architecture Topology ======= -->
-    <section id="skills" class="cc-section">
+    <!-- ======= Blogs — Horizontal stream ======= -->
+    <section id="blogs" class="cc-section">
       <div class="cc-container">
         <div class="reveal">
-          <div class="section-label">architecture.topology</div>
-          <h2 class="section-title">Skill Topology</h2>
-          <p class="section-lead">My selected technical aptitudes — grouped as interdependent architectural layers. Hover a node to illuminate connected systems.</p>
+          <div class="section-label">blog.stream</div>
+          <h2 class="section-title">Blogs</h2>
+          <p class="section-lead">Notes on DevOps, cloud, Kubernetes, and AI infrastructure. Scroll sideways or tap a card to open the full article.</p>
         </div>
 
-        <div class="skill-layers reveal">
+        <div class="blog-carousel reveal">
+          <button type="button" class="blog-carousel__nav blog-carousel__nav--prev" id="blog-prev" aria-label="Previous blogs">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <div class="blog-carousel__track" id="blog-track">
 
-          <div class="skill-layer" data-layer="provisioning">
-            <div class="skill-layer__header">
-              <h3 class="skill-layer__title">
-                <span class="layer-id">L0</span>
-                Provisioning Layer
-              </h3>
-              <span class="skill-layer__meta">source · config · net · security</span>
-            </div>
-            <div class="skill-nodes">
-              <span class="skill-node" data-skill="git">Git / Version control</span>
-              <span class="skill-node" data-skill="linux">Linux</span>
-              <span class="skill-node" data-skill="bash">Bash / Shell</span>
-              <span class="skill-node" data-skill="config">Configuration management</span>
-              <span class="skill-node" data-skill="ansible">Ansible</span>
-              <span class="skill-node" data-skill="terraform">Terraform / IaC</span>
-              <span class="skill-node" data-skill="network">Network protocols</span>
-              <span class="skill-node" data-skill="security">InfoSec</span>
-              <span class="skill-node" data-skill="ssl">SSL / TLS</span>
-            </div>
+            <a class="blog-card" href="blogs/kubernetes-v1-37-is-making-large-api-reads-more-predictable.html">
+              <div class="blog-card__img">
+                <img src="assets/blogs/Kubernetes v1.37 is making large API reads more predictable/Kubernetes v1.37 is making large API reads more predictable.png" alt="Kubernetes v1.37 is making large API reads more predictable">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">POST · ARTICLE</div>
+                <h3>Kubernetes v1.37 is making large API reads more predictable</h3>
+                <p>One of the most useful Kubernetes changes this week is not a new developer-facing feature. It’s an improvement deep inside the control plane.</p>
+                <span class="blog-card__cta">Read article <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <a class="blog-card" href="blogs/ai-gateways-are-becoming-a-frontline-security-risk.html">
+              <div class="blog-card__img">
+                <img src="assets/blogs/AI gateways are becoming a frontline security risk/AI gateways are becoming a frontline security risk.png" alt="AI gateways are becoming a frontline security risk">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">POST · ARTICLE</div>
+                <h3>AI gateways are becoming a frontline security risk</h3>
+                <p>AI infrastructure is moving fast—but attackers are moving with it.</p>
+                <span class="blog-card__cta">Read article <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <a class="blog-card" href="blogs/ai-coding-agents-just-exposed-a-new-supply-chain-problem.html">
+              <div class="blog-card__img">
+                <img src="assets/blogs/AI coding agents just exposed a new supply-chain problem/AI coding agents just exposed a new supply-chain problem.png" alt="AI coding agents just exposed a new supply-chain problem">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">POST · ARTICLE</div>
+                <h3>AI coding agents just exposed a new supply-chain problem</h3>
+                <p>We’ve spent years learning to pin dependencies. Now we have to make sure the thing doing the pinning actually verifies it.</p>
+                <span class="blog-card__cta">Read article <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <a class="blog-card" href="blogs/ai-agents-are-starting-to-behave-like-untrusted-network-clients.html">
+              <div class="blog-card__img">
+                <img src="assets/blogs/AI agents are starting to behave like untrusted network clients/AI agents are starting to behave like untrusted network clients.png" alt="AI agents are starting to behave like untrusted network clients">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">POST · ARTICLE</div>
+                <h3>AI agents are starting to behave like untrusted network clients</h3>
+                <p>The biggest security lesson from the last 24 hours is not about a new model release.</p>
+                <span class="blog-card__cta">Read article <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <a class="blog-card" href="blogs/kubernetes-is-finally-making-rootless-nodes-practical.html">
+              <div class="blog-card__img">
+                <img src="assets/blogs/Kubernetes is finally making rootless nodes practical/Kubernetes is finally making rootless nodes practical.png" alt="Kubernetes is finally making rootless nodes practical">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">POST · ARTICLE</div>
+                <h3>Kubernetes is finally making rootless nodes practical</h3>
+                <p>Most Kubernetes security conversations focus on workloads running as non-root.</p>
+                <span class="blog-card__cta">Read article <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <a class="blog-card" href="blogs/aws-and-azure-are-turning-multicloud-networking-into-a-managed-service.html">
+              <div class="blog-card__img">
+                <img src="assets/blogs/AWS and Azure are turning multicloud networking into a managed service/AWS and Azure are turning multicloud networking into a managed service.png" alt="AWS and Azure are turning multicloud networking into a managed service">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">POST · ARTICLE</div>
+                <h3>AWS and Azure are turning multicloud networking into a managed service</h3>
+                <p>For years, connecting AWS and Azure privately meant coordinating circuits, routers, routing policies, and two separate providers.</p>
+                <span class="blog-card__cta">Read article <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <a class="blog-card" href="blogs/ai-infrastructure-is-splitting-into-specialized-silicon-and-optical-networking.html">
+              <div class="blog-card__img">
+                <img src="assets/blogs/AI infrastructure is splitting into specialized silicon and optical networking/AI infrastructure is splitting into specialized silicon and optical networking.png" alt="AI infrastructure is splitting into specialized silicon and optical networking">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">POST · ARTICLE</div>
+                <h3>AI infrastructure is splitting into specialized silicon and optical networking</h3>
+                <p>The next phase of AI infrastructure may be less about buying more GPUs—and more about redesigning the entire data center around inference.</p>
+                <span class="blog-card__cta">Read article <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <a class="blog-card" href="blogs/ai-infrastructure-is-becoming-agent-ready.html">
+              <div class="blog-card__img">
+                <img src="assets/blogs/AI infrastructure is becoming agent-ready/AI infrastructure is becoming agent-ready.png" alt="AI infrastructure is becoming agent-ready">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">POST · ARTICLE</div>
+                <h3>AI infrastructure is becoming agent-ready</h3>
+                <p>A new release from CIQ is a good example of where AI infrastructure is heading.</p>
+                <span class="blog-card__cta">Read article <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <a class="blog-card" href="blogs/autonomous-ai-needs-the-same-operational-guardrails-as-production-infrastructure.html">
+              <div class="blog-card__img">
+                <img src="assets/blogs/Autonomous AI needs the same operational guardrails as production infrastructure/Autonomous AI needs the same operational guardrails as production infrastructure.png" alt="Autonomous AI needs the same operational guardrails as production infrastructure">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">POST · ARTICLE</div>
+                <h3>Autonomous AI needs the same operational guardrails as production infrastructure</h3>
+                <p>The most important AI infrastructure lesson today is not about a bigger model. It is about control.</p>
+                <span class="blog-card__cta">Read article <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+
+            <a class="blog-card" href="blogs/the-real-bottleneck-in-ai-development-is-moving-from-code-to-production.html">
+              <div class="blog-card__img">
+                <img src="assets/blogs/The real bottleneck in AI development is moving from code to production/The real bottleneck in AI development is moving from code to production.png" alt="The real bottleneck in AI development is moving from code to production">
+              </div>
+              <div class="blog-card__content">
+                <div class="blog-card__meta">POST · ARTICLE</div>
+                <h3>The real bottleneck in AI development is moving from code to production</h3>
+                <p>AI is making it dramatically easier to write software. But writing the code is no longer the hardest part.</p>
+                <span class="blog-card__cta">Read article <i class="bi bi-arrow-right"></i></span>
+              </div>
+            </a>
+
           </div>
-
-          <div class="skill-layer" data-layer="containers">
-            <div class="skill-layer__header">
-              <h3 class="skill-layer__title">
-                <span class="layer-id">L1</span>
-                Containerization
-              </h3>
-              <span class="skill-layer__meta">runtime · isolation · orchestration</span>
-            </div>
-            <div class="skill-nodes">
-              <span class="skill-node" data-skill="containers">Containers</span>
-              <span class="skill-node" data-skill="docker">Docker</span>
-              <span class="skill-node" data-skill="k8s">Kubernetes</span>
-              <span class="skill-node" data-skill="compose">Docker Compose</span>
-              <span class="skill-node" data-skill="microservices">Microservices</span>
-            </div>
-          </div>
-
-          <div class="skill-layer" data-layer="cicd">
-            <div class="skill-layer__header">
-              <h3 class="skill-layer__title">
-                <span class="layer-id">L2</span>
-                CI/CD Pipeline
-              </h3>
-              <span class="skill-layer__meta">build · ship · release</span>
-            </div>
-            <div class="skill-nodes">
-              <span class="skill-node" data-skill="ci">CI Servers</span>
-              <span class="skill-node" data-skill="teamcity">TeamCity</span>
-              <span class="skill-node" data-skill="gha">GitHub Actions</span>
-              <span class="skill-node" data-skill="cd">CD Pipelines</span>
-              <span class="skill-node" data-skill="deploy">Deployment automation</span>
-              <span class="skill-node" data-skill="artifact">Artifact management</span>
-            </div>
-          </div>
-
-          <div class="skill-layer" data-layer="infra">
-            <div class="skill-layer__header">
-              <h3 class="skill-layer__title">
-                <span class="layer-id">L3</span>
-                Infrastructure &amp; Observability
-              </h3>
-              <span class="skill-layer__meta">cloud · orch · metrics</span>
-            </div>
-            <div class="skill-nodes">
-              <span class="skill-node" data-skill="orch">Infrastructure Orchestration</span>
-              <span class="skill-node" data-skill="aws">AWS</span>
-              <span class="skill-node" data-skill="azure">Azure</span>
-              <span class="skill-node" data-skill="iam">IAM / VPC</span>
-              <span class="skill-node" data-skill="nginx">Nginx</span>
-              <span class="skill-node" data-skill="monitor">Monitoring</span>
-              <span class="skill-node" data-skill="grafana">Grafana / Prometheus</span>
-              <span class="skill-node" data-skill="elk">ELK / Logging</span>
-              <span class="skill-node" data-skill="analytics">Analytics</span>
-            </div>
-          </div>
-
-          <div class="skill-layer" data-layer="app">
-            <div class="skill-layer__header">
-              <h3 class="skill-layer__title">
-                <span class="layer-id">L4</span>
-                Application Layer
-              </h3>
-              <span class="skill-layer__meta">full-stack · languages · apis</span>
-            </div>
-            <div class="skill-nodes">
-              <span class="skill-node" data-skill="js">JavaScript</span>
-              <span class="skill-node" data-skill="nodejs">Node.js</span>
-              <span class="skill-node" data-skill="react">React</span>
-              <span class="skill-node" data-skill="python">Python</span>
-              <span class="skill-node" data-skill="java">Java</span>
-              <span class="skill-node" data-skill="sql">SQL / Databases</span>
-              <span class="skill-node" data-skill="api">REST APIs</span>
-              <span class="skill-node" data-skill="fullstack">Full-Stack Development</span>
-            </div>
-          </div>
-
-          <div class="skill-layer" data-layer="soft">
-            <div class="skill-layer__header">
-              <h3 class="skill-layer__title">
-                <span class="layer-id">L5</span>
-                Cross-Functional Layer
-              </h3>
-              <span class="skill-layer__meta">people · product · growth</span>
-            </div>
-            <div class="skill-nodes">
-              <span class="skill-node" data-skill="agile">Agile / Scrum</span>
-              <span class="skill-node" data-skill="comms">Technical communication</span>
-              <span class="skill-node" data-skill="saleseng">Sales ↔ Engineering</span>
-              <span class="skill-node" data-skill="entrepreneur">Entrepreneurship</span>
-              <span class="skill-node" data-skill="product">Product thinking</span>
-              <span class="skill-node" data-skill="writing">Technical writing</span>
-            </div>
-          </div>
-
+          <button type="button" class="blog-carousel__nav blog-carousel__nav--next" id="blog-next" aria-label="Next blogs">
+            <i class="bi bi-chevron-right"></i>
+          </button>
         </div>
-        <p class="topology-hint">⌘ Hover any node to trace interdependencies across layers</p>
+
+        <div class="blog-carousel__footer">
+          <a href="blogs/index.html" class="btn-ghost">View all posts <i class="bi bi-arrow-right"></i></a>
+        </div>
       </div>
     </section>
 
@@ -573,78 +585,215 @@
       </div>
     </section>
 
-    <!-- ======= Radio — Broadcast Logs ======= -->
-    <section id="broadcasts" class="cc-section">
+    <!-- ======= Metrics — Observability Dashboard ======= -->
+    <section id="metrics" class="cc-section">
       <div class="cc-container">
         <div class="reveal">
-          <div class="section-label">broadcast.logs</div>
-          <h2 class="section-title">Radio Interviews</h2>
-          <p class="section-lead">Listen to my featured radio interviews below.</p>
+          <div class="section-label">observability.dashboard</div>
+          <h2 class="section-title">Infrastructure Metrics</h2>
+          <p class="section-lead">
+            I absolutely love life and cherish my family above all else. As an entrepreneur, I don't wait for
+            opportunities to come my way; instead, I proactively create them. I am driven by the passion to make a
+            positive impact in the world and leave a lasting legacy for future generations.
+          </p>
         </div>
 
-        <div class="broadcast-grid reveal">
+        <div class="metrics-grid reveal">
+          <div class="metric-card" data-count>
+            <div class="metric-card__top">
+              <span class="metric-card__label">Happy Clients</span>
+              <span class="metric-card__status">healthy</span>
+            </div>
+            <div class="metric-card__value">
+              <span data-target="7">0</span><span class="metric-card__unit">n</span>
+            </div>
+            <div class="metric-card__spark" aria-hidden="true">
+              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
+                <path class="area" d="M0,30 L15,28 L30,22 L45,24 L60,16 L75,18 L90,10 L105,12 L120,6 L120,36 L0,36 Z"/>
+                <path d="M0,30 L15,28 L30,22 L45,24 L60,16 L75,18 L90,10 L105,12 L120,6"/>
+              </svg>
+            </div>
+          </div>
 
-          <article class="broadcast-card">
-            <div class="broadcast-card__img">
-              <img src="assets/img/radio_1.png" alt="Cybersecurity in Crisis interview">
+          <div class="metric-card" data-count>
+            <div class="metric-card__top">
+              <span class="metric-card__label">Projects</span>
+              <span class="metric-card__status">healthy</span>
             </div>
-            <div class="broadcast-card__content">
-              <div class="broadcast-card__freq">TX · FREQ 01 · LIVE ARCHIVE</div>
-              <h3>Cybersecurity in Crisis: Inside the 16 Billion Password Leak</h3>
-              <audio controls preload="none">
-                <source src="assets/audio/radio_1.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-              <p>A record-breaking 16 billion passwords have been leaked in what's being called the largest data breach in history. In this interview, we break down how it happened, who’s affected, and what steps you should take right now to protect your accounts.</p>
+            <div class="metric-card__value">
+              <span data-target="97">0</span><span class="metric-card__unit">n</span>
             </div>
-          </article>
+            <div class="metric-card__spark" aria-hidden="true">
+              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
+                <path class="area" d="M0,28 L20,26 L40,20 L60,22 L80,12 L100,14 L120,4 L120,36 L0,36 Z"/>
+                <path d="M0,28 L20,26 L40,20 L60,22 L80,12 L100,14 L120,4"/>
+              </svg>
+            </div>
+          </div>
 
-          <article class="broadcast-card">
-            <div class="broadcast-card__img">
-              <img src="assets/img/radio_2.jpg" alt="Scams in the Shadows interview">
+          <div class="metric-card" data-count>
+            <div class="metric-card__top">
+              <span class="metric-card__label">Books Read</span>
+              <span class="metric-card__status">healthy</span>
             </div>
-            <div class="broadcast-card__content">
-              <div class="broadcast-card__freq">TX · FREQ 02 · LIVE ARCHIVE</div>
-              <h3>Scams in the Shadows: The New Face of Cybercrime</h3>
-              <audio controls preload="none">
-                <source src="assets/audio/radio_2.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-              <p>Cyber fraud has become a multi-billion-dollar industry. In this segment, we explore real examples of scams, how they trick even smart people, and what you can do to stay secure.</p>
+            <div class="metric-card__value">
+              <span data-target="186">0</span><span class="metric-card__unit">n</span>
             </div>
-          </article>
+            <div class="metric-card__spark" aria-hidden="true">
+              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
+                <path class="area" d="M0,32 L15,30 L30,26 L45,20 L60,18 L75,14 L90,10 L105,8 L120,4 L120,36 L0,36 Z"/>
+                <path d="M0,32 L15,30 L30,26 L45,20 L60,18 L75,14 L90,10 L105,8 L120,4"/>
+              </svg>
+            </div>
+          </div>
 
-          <article class="broadcast-card">
-            <div class="broadcast-card__img">
-              <img src="assets/img/radio_3.jpg" alt="Updates Without a Download interview">
+          <div class="metric-card" data-count>
+            <div class="metric-card__top">
+              <span class="metric-card__label">Awards</span>
+              <span class="metric-card__status">healthy</span>
             </div>
-            <div class="broadcast-card__content">
-              <div class="broadcast-card__freq">TX · FREQ 03 · LIVE ARCHIVE</div>
-              <h3>Updates Without a Download: How Tech Companies Change Your Apps Instantly</h3>
-              <audio controls preload="none">
-                <source src="assets/audio/radio_3.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-              <p>Think your apps only change when you update them? Think again. We explore how new features are added behind the scenes — without disrupting your experience.</p>
+            <div class="metric-card__value">
+              <span data-target="41">0</span><span class="metric-card__unit">n</span>
             </div>
-          </article>
+            <div class="metric-card__spark" aria-hidden="true">
+              <svg viewBox="0 0 120 36" preserveAspectRatio="none">
+                <path class="area" d="M0,26 L20,24 L40,28 L60,16 L80,18 L100,8 L120,10 L120,36 L0,36 Z"/>
+                <path d="M0,26 L20,24 L40,28 L60,16 L80,18 L100,8 L120,10"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <article class="broadcast-card">
-            <div class="broadcast-card__img">
-              <img src="assets/img/radio_4.png" alt="Zero-Aid hackathon interview">
+    <!-- ======= Skills — Architecture Topology ======= -->
+    <section id="skills" class="cc-section cc-section--alt">
+      <div class="cc-container">
+        <div class="reveal">
+          <div class="section-label">architecture.topology</div>
+          <h2 class="section-title">Skill Topology</h2>
+          <p class="section-lead">My selected technical aptitudes — grouped as interdependent architectural layers. Hover a node to illuminate connected systems.</p>
+        </div>
+
+        <div class="skill-layers reveal">
+
+          <div class="skill-layer" data-layer="provisioning">
+            <div class="skill-layer__header">
+              <h3 class="skill-layer__title">
+                <span class="layer-id">L0</span>
+                Provisioning Layer
+              </h3>
+              <span class="skill-layer__meta">source · config · net · security</span>
             </div>
-            <div class="broadcast-card__content">
-              <div class="broadcast-card__freq">TX · FREQ 04 · LIVE ARCHIVE</div>
-              <h3>From Hackathon to Lifesaver: The Story Behind Zero-Aid</h3>
-              <audio controls preload="none">
-                <source src="assets/audio/radio_4.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-              </audio>
-              <p>In this interview, I share how my friend Simaan Saada and I won first place at UltraHack2020, a hackathon organized by Tsofen, with support from entrepreneur Hans Shakur. We developed Zero-Aid — a smart ring that provides urgent medical help at the touch of a finger using live location, video, and audio. Built in just 72 hours during the COVID-19 crisis, it’s a story of perseverance and the power of tech to save lives.</p>
+            <div class="skill-nodes">
+              <span class="skill-node" data-skill="git">Git / Version control</span>
+              <span class="skill-node" data-skill="linux">Linux</span>
+              <span class="skill-node" data-skill="bash">Bash / Shell</span>
+              <span class="skill-node" data-skill="config">Configuration management</span>
+              <span class="skill-node" data-skill="ansible">Ansible</span>
+              <span class="skill-node" data-skill="terraform">Terraform / IaC</span>
+              <span class="skill-node" data-skill="network">Network protocols</span>
+              <span class="skill-node" data-skill="security">InfoSec</span>
+              <span class="skill-node" data-skill="ssl">SSL / TLS</span>
             </div>
-          </article>
+          </div>
+
+          <div class="skill-layer" data-layer="containers">
+            <div class="skill-layer__header">
+              <h3 class="skill-layer__title">
+                <span class="layer-id">L1</span>
+                Containerization
+              </h3>
+              <span class="skill-layer__meta">runtime · isolation · orchestration</span>
+            </div>
+            <div class="skill-nodes">
+              <span class="skill-node" data-skill="containers">Containers</span>
+              <span class="skill-node" data-skill="docker">Docker</span>
+              <span class="skill-node" data-skill="k8s">Kubernetes</span>
+              <span class="skill-node" data-skill="compose">Docker Compose</span>
+              <span class="skill-node" data-skill="microservices">Microservices</span>
+            </div>
+          </div>
+
+          <div class="skill-layer" data-layer="cicd">
+            <div class="skill-layer__header">
+              <h3 class="skill-layer__title">
+                <span class="layer-id">L2</span>
+                CI/CD Pipeline
+              </h3>
+              <span class="skill-layer__meta">build · ship · release</span>
+            </div>
+            <div class="skill-nodes">
+              <span class="skill-node" data-skill="ci">CI Servers</span>
+              <span class="skill-node" data-skill="teamcity">TeamCity</span>
+              <span class="skill-node" data-skill="gha">GitHub Actions</span>
+              <span class="skill-node" data-skill="cd">CD Pipelines</span>
+              <span class="skill-node" data-skill="deploy">Deployment automation</span>
+              <span class="skill-node" data-skill="artifact">Artifact management</span>
+            </div>
+          </div>
+
+          <div class="skill-layer" data-layer="infra">
+            <div class="skill-layer__header">
+              <h3 class="skill-layer__title">
+                <span class="layer-id">L3</span>
+                Infrastructure &amp; Observability
+              </h3>
+              <span class="skill-layer__meta">cloud · orch · metrics</span>
+            </div>
+            <div class="skill-nodes">
+              <span class="skill-node" data-skill="orch">Infrastructure Orchestration</span>
+              <span class="skill-node" data-skill="aws">AWS</span>
+              <span class="skill-node" data-skill="azure">Azure</span>
+              <span class="skill-node" data-skill="iam">IAM / VPC</span>
+              <span class="skill-node" data-skill="nginx">Nginx</span>
+              <span class="skill-node" data-skill="monitor">Monitoring</span>
+              <span class="skill-node" data-skill="grafana">Grafana / Prometheus</span>
+              <span class="skill-node" data-skill="elk">ELK / Logging</span>
+              <span class="skill-node" data-skill="analytics">Analytics</span>
+            </div>
+          </div>
+
+          <div class="skill-layer" data-layer="app">
+            <div class="skill-layer__header">
+              <h3 class="skill-layer__title">
+                <span class="layer-id">L4</span>
+                Application Layer
+              </h3>
+              <span class="skill-layer__meta">full-stack · languages · apis</span>
+            </div>
+            <div class="skill-nodes">
+              <span class="skill-node" data-skill="js">JavaScript</span>
+              <span class="skill-node" data-skill="nodejs">Node.js</span>
+              <span class="skill-node" data-skill="react">React</span>
+              <span class="skill-node" data-skill="python">Python</span>
+              <span class="skill-node" data-skill="java">Java</span>
+              <span class="skill-node" data-skill="sql">SQL / Databases</span>
+              <span class="skill-node" data-skill="api">REST APIs</span>
+              <span class="skill-node" data-skill="fullstack">Full-Stack Development</span>
+            </div>
+          </div>
+
+          <div class="skill-layer" data-layer="soft">
+            <div class="skill-layer__header">
+              <h3 class="skill-layer__title">
+                <span class="layer-id">L5</span>
+                Cross-Functional Layer
+              </h3>
+              <span class="skill-layer__meta">people · product · growth</span>
+            </div>
+            <div class="skill-nodes">
+              <span class="skill-node" data-skill="agile">Agile / Scrum</span>
+              <span class="skill-node" data-skill="comms">Technical communication</span>
+              <span class="skill-node" data-skill="saleseng">Sales ↔ Engineering</span>
+              <span class="skill-node" data-skill="entrepreneur">Entrepreneurship</span>
+              <span class="skill-node" data-skill="product">Product thinking</span>
+              <span class="skill-node" data-skill="writing">Technical writing</span>
+            </div>
+          </div>
 
         </div>
+        <p class="topology-hint">⌘ Hover any node to trace interdependencies across layers</p>
       </div>
     </section>
 

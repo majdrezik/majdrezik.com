@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI infrastructure is splitting into specialized silicon and optical networking — Majd Rezik</title>
+  <meta name="description" content="The next phase of AI infrastructure may be less about buying more GPUs—and more about redesigning the entire data center around inference.">
+  <link href="../assets/img/favicon.ico" rel="icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/command-center.css" rel="stylesheet">
+</head>
+<body class="blog-page">
+  <nav class="cc-nav" aria-label="Primary">
+    <a href="../index.html" class="cc-nav__brand">
+      <span class="cc-nav__status" aria-hidden="true"></span>
+      majdrezik@cloud:~
+    </a>
+    <ul class="cc-nav__links">
+      <li><a href="../index.html#hero">/boot</a></li>
+      <li><a href="../index.html#about">/about</a></li>
+      <li><a href="../index.html#blogs" class="active">/blogs</a></li>
+      <li><a href="../index.html#skills">/skills</a></li>
+      <li><a href="../index.html#broadcasts">/radio</a></li>
+    </ul>
+  </nav>
+
+  <main class="blog-article">
+    <div class="cc-container blog-article__inner">
+      <a class="blog-back" href="index.html"><i class="bi bi-arrow-left"></i> Back to blogs</a>
+      <article class="blog-post panel">
+        <div class="panel-header">
+          <div class="panel-dots"><span></span><span></span><span></span></div>
+          <span>~/blogs/ai-infrastructure-is-splitting-into-specialized-silicon-and-optical-networking.md</span>
+        </div>
+        <div class="panel-body blog-post__body">
+          <div class="blog-post__hero"><img src="../assets/blogs/AI%20infrastructure%20is%20splitting%20into%20specialized%20silicon%20and%20optical%20networking/AI%20infrastructure%20is%20splitting%20into%20specialized%20silicon%20and%20optical%20networking.png" alt="AI infrastructure is splitting into specialized silicon and optical networking"></div>
+          <div class="section-label">blog.post</div>
+          <h1 class="blog-post__title">AI infrastructure is splitting into specialized silicon and optical networking</h1>
+          <div class="blog-post__content">
+            <p>The next phase of AI infrastructure may be less about buying more GPUs—and more about redesigning the entire data center around inference.</p>
+<p>Amazon and Qualcomm announced a long-term partnership that could see AWS purchase up to $60 billion of Qualcomm AI data-center chips and related products. The work also includes high-speed optical connectivity for AI clusters, with technology targeting links up to 1.6 Tbps. Reuters</p>
+<p>Why does this matter to DevOps and platform engineers?</p>
+<p>Because AI workloads are exposing bottlenecks beyond raw compute:</p>
+<ul><li>Inference needs predictable latency and cost</li><li>Clusters need faster east-west communication</li><li>Memory and networking can become the limiting factors</li><li>Cloud providers want alternatives to a single accelerator ecosystem</li></ul>
+<p>This means infrastructure teams will increasingly need to think in terms of heterogeneous platforms:</p>
+<p>Different accelerators, different runtimes, different scheduling constraints, and different observability signals.</p>
+<p>The practical takeaway:</p>
+<p>“Kubernetes on GPUs” is no longer enough as an infrastructure strategy.</p>
+<p>Teams running AI workloads should start preparing for:</p>
+<ul><li>Accelerator-aware scheduling</li><li>Workload placement based on latency and bandwidth</li><li>Capacity planning for inference, not only training</li><li>Cost visibility by model, endpoint, and hardware type</li><li>Network telemetry alongside CPU and GPU metrics</li><li>Portable deployment patterns across accelerator vendors</li></ul>
+<p>The future AI platform will be won by the teams that optimize the whole path:</p>
+<p>model → memory → network → runtime → application</p>
+<p>Not just the chip.</p>
+<div class="blog-tags"><span class="blog-tag">#AIInfrastructure</span> <span class="blog-tag">#CloudComputing</span> <span class="blog-tag">#DevOps</span> <span class="blog-tag">#Kubernetes</span> <span class="blog-tag">#PlatformEngineering</span></div>
+<p class="blog-source">Source: Reuters, September 8, 2026. Reuters</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="cc-container">
+      <h3>majdrezik@cloud:~$</h3>
+      <div class="copyright">&copy; Copyright <strong>Majd Rezik</strong>. All Rights Reserved</div>
+    </div>
+  </footer>
+</body>
+</html>

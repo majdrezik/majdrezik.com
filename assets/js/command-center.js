@@ -840,6 +840,22 @@
     });
   }
 
+  function initBlogCarousel() {
+    const track = document.getElementById("blog-track");
+    const prev = document.getElementById("blog-prev");
+    const next = document.getElementById("blog-next");
+    if (!track || !prev || !next) return;
+
+    const scrollByCard = (dir) => {
+      const card = track.querySelector(".blog-card");
+      const amount = card ? card.getBoundingClientRect().width + 16 : 320;
+      track.scrollBy({ left: dir * amount, behavior: "smooth" });
+    };
+
+    prev.addEventListener("click", () => scrollByCard(-1));
+    next.addEventListener("click", () => scrollByCard(1));
+  }
+
   /* ------------------------------------------------------------------ */
   /*  Boot                                                               */
   /* ------------------------------------------------------------------ */
@@ -851,6 +867,7 @@
     initNav();
     initReveal();
     initReviews();
+    initBlogCarousel();
     initBot();
   });
 })();

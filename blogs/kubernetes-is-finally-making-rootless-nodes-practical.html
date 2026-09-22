@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kubernetes is finally making rootless nodes practical — Majd Rezik</title>
+  <meta name="description" content="Most Kubernetes security conversations focus on workloads running as non-root.">
+  <link href="../assets/img/favicon.ico" rel="icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/command-center.css" rel="stylesheet">
+</head>
+<body class="blog-page">
+  <nav class="cc-nav" aria-label="Primary">
+    <a href="../index.html" class="cc-nav__brand">
+      <span class="cc-nav__status" aria-hidden="true"></span>
+      majdrezik@cloud:~
+    </a>
+    <ul class="cc-nav__links">
+      <li><a href="../index.html#hero">/boot</a></li>
+      <li><a href="../index.html#about">/about</a></li>
+      <li><a href="../index.html#blogs" class="active">/blogs</a></li>
+      <li><a href="../index.html#skills">/skills</a></li>
+      <li><a href="../index.html#broadcasts">/radio</a></li>
+    </ul>
+  </nav>
+
+  <main class="blog-article">
+    <div class="cc-container blog-article__inner">
+      <a class="blog-back" href="index.html"><i class="bi bi-arrow-left"></i> Back to blogs</a>
+      <article class="blog-post panel">
+        <div class="panel-header">
+          <div class="panel-dots"><span></span><span></span><span></span></div>
+          <span>~/blogs/kubernetes-is-finally-making-rootless-nodes-practical.md</span>
+        </div>
+        <div class="panel-body blog-post__body">
+          <div class="blog-post__hero"><img src="../assets/blogs/Kubernetes%20is%20finally%20making%20rootless%20nodes%20practical/Kubernetes%20is%20finally%20making%20rootless%20nodes%20practical.png" alt="Kubernetes is finally making rootless nodes practical"></div>
+          <div class="section-label">blog.post</div>
+          <h1 class="blog-post__title">Kubernetes is finally making rootless nodes practical</h1>
+          <div class="blog-post__content">
+            <p>Most Kubernetes security conversations focus on workloads running as non-root.</p>
+<p>But the node itself has traditionally remained highly privileged.</p>
+<p>That is changing.</p>
+<p>Kubernetes v1.37 promotes KubeletInUserNamespace, also known as rootless mode, to beta. It allows the kubelet, container runtime, CNI plugins, and kube-proxy to run as a non-root user inside a Linux user namespace. Kubernetes</p>
+<p>Why does this matter?</p>
+<p>Because the node layer is part of your attack surface. If a container escape or host compromise reaches a node where core components run with full root privileges, the potential blast radius becomes much larger.</p>
+<p>Rootless mode does not magically eliminate risk, and it is not a drop-in replacement for every production environment.</p>
+<p>But it moves Kubernetes toward a stronger default security model:</p>
+<p>Reduce privilege at the infrastructure layer—not only inside the application container.</p>
+<p>For platform teams, the practical next steps are:</p>
+<ul><li>Test rootless mode in isolated clusters</li><li>Validate CNI, CSI, runtime, and monitoring compatibility</li><li>Measure performance and operational differences</li><li>Combine it with Pod Security Standards and workload user namespaces</li><li>Document which workloads still require elevated privileges</li></ul>
+<p>The broader lesson is bigger than this one feature:</p>
+<p>Security hardening becomes much more effective when it is built into the platform architecture instead of left to every application team.</p>
+<div class="blog-tags"><span class="blog-tag">#Kubernetes</span> <span class="blog-tag">#DevOps</span> <span class="blog-tag">#CloudNative</span> <span class="blog-tag">#ContainerSecurity</span> <span class="blog-tag">#PlatformEngineering</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="cc-container">
+      <h3>majdrezik@cloud:~$</h3>
+      <div class="copyright">&copy; Copyright <strong>Majd Rezik</strong>. All Rights Reserved</div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kubernetes v1.37 is making large API reads more predictable — Majd Rezik</title>
+  <meta name="description" content="One of the most useful Kubernetes changes this week is not a new developer-facing feature.">
+  <link href="../assets/img/favicon.ico" rel="icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/css/command-center.css" rel="stylesheet">
+</head>
+<body class="blog-page">
+  <nav class="cc-nav" aria-label="Primary">
+    <a href="../index.html" class="cc-nav__brand">
+      <span class="cc-nav__status" aria-hidden="true"></span>
+      majdrezik@cloud:~
+    </a>
+    <ul class="cc-nav__links">
+      <li><a href="../index.html#hero">/boot</a></li>
+      <li><a href="../index.html#about">/about</a></li>
+      <li><a href="../index.html#blogs" class="active">/blogs</a></li>
+      <li><a href="../index.html#skills">/skills</a></li>
+      <li><a href="../index.html#broadcasts">/radio</a></li>
+    </ul>
+  </nav>
+
+  <main class="blog-article">
+    <div class="cc-container blog-article__inner">
+      <a class="blog-back" href="index.html"><i class="bi bi-arrow-left"></i> Back to blogs</a>
+      <article class="blog-post panel">
+        <div class="panel-header">
+          <div class="panel-dots"><span></span><span></span><span></span></div>
+          <span>~/blogs/kubernetes-v1-37-is-making-large-api-reads-more-predictable.md</span>
+        </div>
+        <div class="panel-body blog-post__body">
+          <div class="blog-post__hero"><img src="../assets/blogs/Kubernetes%20v1.37%20is%20making%20large%20API%20reads%20more%20predictable/Kubernetes%20v1.37%20is%20making%20large%20API%20reads%20more%20predictable.png" alt="Kubernetes v1.37 is making large API reads more predictable"></div>
+          <div class="section-label">blog.post</div>
+          <h1 class="blog-post__title">Kubernetes v1.37 is making large API reads more predictable</h1>
+          <div class="blog-post__content">
+            <p>One of the most useful Kubernetes changes this week is not a new developer-facing feature.</p>
+<p>It’s an improvement deep inside the control plane.</p>
+<p>In Kubernetes v1.37, etcd RangeStream is graduating to beta. Together with etcd 3.7, it reduces the memory needed by the API server and etcd when reading large collections of objects.</p>
+<p>Why does that matter?</p>
+<p>Large LIST operations—especially for resources like Pods or large custom resources—can create significant memory spikes. In the wrong conditions, those spikes can contribute to API server instability or even out-of-memory events.</p>
+<p>The problem is that traditional pagination is usually limited by the number of keys, not by the size of the objects being returned. A page containing a small number of very large objects can still consume a lot of memory.</p>
+<p>RangeStream improves this by streaming large reads instead of assembling the entire response in memory at once.</p>
+<p>The practical takeaway for platform teams:</p>
+<p>Control-plane reliability is often determined by behavior under scale, not by what works in a small cluster.</p>
+<p>When operating large Kubernetes environments, it’s worth monitoring:</p>
+<ul><li>API server memory during watch-cache initialization</li><li>Large LIST requests from controllers and operators</li><li>Custom resource size and object count</li><li>etcd memory pressure during upgrades or restarts</li></ul>
+<p>This is the kind of change that rarely gets attention because it doesn’t change your YAML.</p>
+<p>But it can make large clusters more stable, upgrades more predictable, and failure modes less dramatic.</p>
+<div class="blog-tags"><span class="blog-tag">#Kubernetes</span> <span class="blog-tag">#DevOps</span> <span class="blog-tag">#PlatformEngineering</span> <span class="blog-tag">#CloudNative</span> <span class="blog-tag">#SRE</span></div>
+<p class="blog-source">Source: Kubernetes Blog, published September 1, 2026. Kubernetes</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div class="cc-container">
+      <h3>majdrezik@cloud:~$</h3>
+      <div class="copyright">&copy; Copyright <strong>Majd Rezik</strong>. All Rights Reserved</div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+[
+  {
+    "title": "AI coding agents just exposed a new supply-chain problem",
+    "slug": "ai-coding-agents-just-exposed-a-new-supply-chain-problem",
+    "href": "blogs/ai-coding-agents-just-exposed-a-new-supply-chain-problem.html",
+    "image": "assets/blogs/AI coding agents just exposed a new supply-chain problem/AI coding agents just exposed a new supply-chain problem.png",
+    "excerpt": "We\u2019ve spent years learning to pin dependencies."
+  },
+  {
+    "title": "AI agents are starting to behave like untrusted network clients",
+    "slug": "ai-agents-are-starting-to-behave-like-untrusted-network-clients",
+    "href": "blogs/ai-agents-are-starting-to-behave-like-untrusted-network-clients.html",
+    "image": "assets/blogs/AI agents are starting to behave like untrusted network clients/AI agents are starting to behave like untrusted network clients.png",
+    "excerpt": "The biggest security lesson from the last 24 hours is not about a new model release."
+  },
+  {
+    "title": "AI infrastructure is splitting into specialized silicon and optical networking",
+    "slug": "ai-infrastructure-is-splitting-into-specialized-silicon-and-optical-networking",
+    "href": "blogs/ai-infrastructure-is-splitting-into-specialized-silicon-and-optical-networking.html",
+    "image": "assets/blogs/AI infrastructure is splitting into specialized silicon and optical networking/AI infrastructure is splitting into specialized silicon and optical networking.png",
+    "excerpt": "The next phase of AI infrastructure may be less about buying more GPUs\u2014and more about redesigning the entire data center around inference."
+  },
+  {
+    "title": "AWS and Azure are turning multicloud networking into a managed service",
+    "slug": "aws-and-azure-are-turning-multicloud-networking-into-a-managed-service",
+    "href": "blogs/aws-and-azure-are-turning-multicloud-networking-into-a-managed-service.html",
+    "image": "assets/blogs/AWS and Azure are turning multicloud networking into a managed service/AWS and Azure are turning multicloud networking into a managed service.png",
+    "excerpt": "For years, connecting AWS and Azure privately meant coordinating circuits, routers, routing policies, encryption, monitoring, and two separate providers."
+  },
+  {
+    "title": "Autonomous AI needs the same operational guardrails as production infrastructure",
+    "slug": "autonomous-ai-needs-the-same-operational-guardrails-as-production-infrastructure",
+    "href": "blogs/autonomous-ai-needs-the-same-operational-guardrails-as-production-infrastructure.html",
+    "image": "assets/blogs/Autonomous AI needs the same operational guardrails as production infrastructure/Autonomous AI needs the same operational guardrails as production infrastructure.png",
+    "excerpt": "Read the full article."
+  },
+  {
+    "title": "Kubernetes is finally making rootless nodes practical",
+    "slug": "kubernetes-is-finally-making-rootless-nodes-practical",
+    "href": "blogs/kubernetes-is-finally-making-rootless-nodes-practical.html",
+    "image": "assets/blogs/Kubernetes is finally making rootless nodes practical/Kubernetes is finally making rootless nodes practical.png",
+    "excerpt": "Most Kubernetes security conversations focus on workloads running as non-root."
+  },
+  {
+    "title": "AI gateways are becoming a frontline security risk",
+    "slug": "ai-gateways-are-becoming-a-frontline-security-risk",
+    "href": "blogs/ai-gateways-are-becoming-a-frontline-security-risk.html",
+    "image": "assets/blogs/AI gateways are becoming a frontline security risk/AI gateways are becoming a frontline security risk.png",
+    "excerpt": "AI infrastructure is moving fast\u2014but attackers are moving with it."
+  },
+  {
+    "title": "AI infrastructure is becoming agent-ready",
+    "slug": "ai-infrastructure-is-becoming-agent-ready",
+    "href": "blogs/ai-infrastructure-is-becoming-agent-ready.html",
+    "image": "assets/blogs/AI infrastructure is becoming agent-ready/AI infrastructure is becoming agent-ready.png",
+    "excerpt": "Read the full article."
+  },
+  {
+    "title": "The real bottleneck in AI development is moving from code to production",
+    "slug": "the-real-bottleneck-in-ai-development-is-moving-from-code-to-production",
+    "href": "blogs/the-real-bottleneck-in-ai-development-is-moving-from-code-to-production.html",
+    "image": "assets/blogs/The real bottleneck in AI development is moving from code to production/The real bottleneck in AI development is moving from code to production.png",
+    "excerpt": "AI is making it dramatically easier to write software."
+  },
+  {
+    "title": "Kubernetes v1.37 is making large API reads more predictable",
+    "slug": "kubernetes-v1-37-is-making-large-api-reads-more-predictable",
+    "href": "blogs/kubernetes-v1-37-is-making-large-api-reads-more-predictable.html",
+    "image": "assets/blogs/Kubernetes v1.37 is making large API reads more predictable/Kubernetes v1.37 is making large API reads more predictable.png",
+    "excerpt": "One of the most useful Kubernetes changes this week is not a new developer-facing feature."
+  }
+]
