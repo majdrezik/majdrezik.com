@@ -1,14 +1,14 @@
 {
  "sprint": "2026-W45",
  "day": 1,
- "phase": "Discovery & planning",
+ "phase": "Planning done",
  "updated": "3 Nov 2026",
  "goal": "Put the first paying office within reach: no trial office locked out at day 30, a release pipeline that is green and traceable, and backups that actually run.",
- "majdNote": "3 features waiting for approval",
+ "majdNote": "Approved FEAT-1",
  "teams": {
   "owl": {
-   "status": "reviewing",
-   "task": "Proposal sent. Waiting for Majd to approve 3 features",
+   "status": "working",
+   "task": "Plan approved. Routing FEAT-1 to Elephant for design review",
    "backlog": []
   },
   "elephant": {
@@ -105,7 +105,7 @@
     "Hawk"
    ],
    "effort": "M",
-   "decision": null
+   "decision": "approved"
   },
   {
    "id": "FEAT-2",
@@ -117,7 +117,7 @@
     "Beaver"
    ],
    "effort": "S",
-   "decision": null
+   "decision": "denied"
   },
   {
    "id": "FEAT-3",
@@ -128,7 +128,7 @@
     "Fox"
    ],
    "effort": "S",
-   "decision": null
+   "decision": "denied"
   }
  ],
  "required": [
@@ -299,7 +299,7 @@
   {
    "id": "FEAT-1",
    "type": "feature",
-   "state": "awaiting-approval",
+   "state": "planned",
    "owners": [
     "Beaver",
     "Fox",
@@ -307,27 +307,6 @@
     "Hawk"
    ],
    "title": "No trial office gets locked out: trial-ending emails plus pay-path readiness (card or bank-transfer fallback)"
-  },
-  {
-   "id": "FEAT-2",
-   "type": "feature",
-   "state": "awaiting-approval",
-   "owners": [
-    "Dolphin",
-    "Fox",
-    "Beaver"
-   ],
-   "title": "Checkout funnel visibility plus a weekly aggregate baseline"
-  },
-  {
-   "id": "FEAT-3",
-   "type": "feature",
-   "state": "awaiting-approval",
-   "owners": [
-    "Spider",
-    "Fox"
-   ],
-   "title": "Public-site polish for search: unsupported ?lang= falls back to Hebrew, a real 404 screen, security.txt"
   }
  ],
  "events": [
@@ -458,6 +437,38 @@
    "type": "approval-request",
    "ticket": "FEAT-1",
    "text": "No trial office gets locked out: trial-ending emails plus pay-path readiness (card or bank-transfer fallback)"
+  },
+  {
+   "time": "2026-11-03T18:00:00+02:00",
+   "from": "Majd",
+   "to": "Owl",
+   "type": "decision",
+   "ticket": "FEAT-1",
+   "text": "FEAT-1 approved"
+  },
+  {
+   "time": "2026-11-03T18:00:00+02:00",
+   "from": "Majd",
+   "to": "Owl",
+   "type": "decision",
+   "ticket": "FEAT-2",
+   "text": "FEAT-2 denied"
+  },
+  {
+   "time": "2026-11-03T18:00:00+02:00",
+   "from": "Majd",
+   "to": "Owl",
+   "type": "decision",
+   "ticket": "FEAT-3",
+   "text": "FEAT-3 denied"
+  },
+  {
+   "time": "2026-11-03T18:05:00+02:00",
+   "from": "Owl",
+   "to": "Beaver",
+   "type": "assignment",
+   "ticket": "FEAT-1",
+   "text": "Trial lock-out feature approved: design review, then build"
   }
  ],
  "quality": {
@@ -634,7 +645,10 @@
   "cfr": "—"
  },
  "next": {
-  "draft": [],
+  "draft": [
+   "Backlog: checkout funnel visibility (denied this week)",
+   "Backlog: public-site polish for search (denied this week)"
+  ],
   "carry": []
  }
 }
