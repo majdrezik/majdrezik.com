@@ -1,0 +1,640 @@
+{
+ "sprint": "2026-W45",
+ "day": 1,
+ "phase": "Discovery & planning",
+ "updated": "3 Nov 2026",
+ "goal": "Put the first paying office within reach: no trial office locked out at day 30, a release pipeline that is green and traceable, and backups that actually run.",
+ "majdNote": "3 features waiting for approval",
+ "teams": {
+  "owl": {
+   "status": "reviewing",
+   "task": "Proposal sent. Waiting for Majd to approve 3 features",
+   "backlog": []
+  },
+  "elephant": {
+   "status": "idle",
+   "task": "Next: Security hardening (details private)",
+   "backlog": [
+    "REQ-3",
+    "REQ-7"
+   ]
+  },
+  "beaver": {
+   "status": "idle",
+   "task": "Next: Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline",
+   "backlog": [
+    "REQ-1",
+    "REQ-2",
+    "REQ-3",
+    "REQ-5",
+    "FEAT-1",
+    "FEAT-2"
+   ]
+  },
+  "fox": {
+   "status": "idle",
+   "task": "Next: Security hardening (details private)",
+   "backlog": [
+    "REQ-4",
+    "FEAT-1",
+    "FEAT-2",
+    "FEAT-3"
+   ]
+  },
+  "octopus": {
+   "status": "idle",
+   "task": "Next: Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline",
+   "backlog": [
+    "REQ-1",
+    "REQ-2",
+    "REQ-7",
+    "REQ-9"
+   ]
+  },
+  "hawk": {
+   "status": "idle",
+   "task": "Next: Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline",
+   "backlog": [
+    "REQ-1",
+    "REQ-4",
+    "FEAT-1"
+   ]
+  },
+  "spider": {
+   "status": "idle",
+   "task": "Next: Public-site polish for search: unsupported ?lang= falls back to Hebrew, a real 404 screen, security.txt",
+   "backlog": [
+    "FEAT-3"
+   ]
+  },
+  "badger": {
+   "status": "idle",
+   "task": "Next: Security hardening (details private)",
+   "backlog": [
+    "REQ-3",
+    "REQ-4",
+    "REQ-5",
+    "REQ-6"
+   ]
+  },
+  "crow": {
+   "status": "idle",
+   "task": "Next: Bring the status docs up to date",
+   "backlog": [
+    "REQ-8",
+    "FEAT-1"
+   ]
+  },
+  "dolphin": {
+   "status": "idle",
+   "task": "Next: Checkout funnel visibility plus a weekly aggregate baseline",
+   "backlog": [
+    "FEAT-2"
+   ]
+  }
+ },
+ "features": [
+  {
+   "id": "FEAT-1",
+   "title": "No trial office gets locked out: trial-ending emails plus pay-path readiness (card or bank-transfer fallback)",
+   "userGets": "Owners on a trial get reminders on day 23 and day 29 that link to /settings/plan. When card payment is unavailable, the plan page shows a clear way to pay (bank transfer or contact) instead of failing.",
+   "owners": [
+    "Beaver",
+    "Fox",
+    "Crow",
+    "Hawk"
+   ],
+   "effort": "M",
+   "decision": null
+  },
+  {
+   "id": "FEAT-2",
+   "title": "Checkout funnel visibility plus a weekly aggregate baseline",
+   "userGets": "Majd sees how many owners tried to pay and where they failed, and each sprint starts from real numbers.",
+   "owners": [
+    "Dolphin",
+    "Fox",
+    "Beaver"
+   ],
+   "effort": "S",
+   "decision": null
+  },
+  {
+   "id": "FEAT-3",
+   "title": "Public-site polish for search: unsupported ?lang= falls back to Hebrew, a real 404 screen, security.txt",
+   "userGets": "Visitors from shared or garbled links land on a working page, and crawlers get correct status codes.",
+   "owners": [
+    "Spider",
+    "Fox"
+   ],
+   "effort": "S",
+   "decision": null
+  }
+ ],
+ "required": [
+  {
+   "id": "REQ-1",
+   "title": "Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline",
+   "owners": [
+    "Beaver",
+    "Hawk",
+    "Octopus"
+   ]
+  },
+  {
+   "id": "REQ-2",
+   "title": "Show the release version in the health check and record every production deploy",
+   "owners": [
+    "Octopus",
+    "Beaver"
+   ]
+  },
+  {
+   "id": "REQ-3",
+   "title": "Security hardening (details private)",
+   "owners": [
+    "Elephant",
+    "Honey Badger",
+    "Beaver"
+   ]
+  },
+  {
+   "id": "REQ-4",
+   "title": "Security hardening (details private)",
+   "owners": [
+    "Honey Badger",
+    "Fox",
+    "Hawk"
+   ]
+  },
+  {
+   "id": "REQ-5",
+   "title": "Security hardening (details private)",
+   "owners": [
+    "Honey Badger",
+    "Beaver"
+   ]
+  },
+  {
+   "id": "REQ-6",
+   "title": "Security hardening (details private)",
+   "owners": [
+    "Honey Badger"
+   ]
+  },
+  {
+   "id": "REQ-7",
+   "title": "Run database migrations as an explicit deploy step",
+   "owners": [
+    "Elephant",
+    "Octopus"
+   ]
+  },
+  {
+   "id": "REQ-8",
+   "title": "Bring the status docs up to date",
+   "owners": [
+    "Crow"
+   ]
+  },
+  {
+   "id": "REQ-9",
+   "title": "Confirm scheduled backups and uptime checks run once Majd's settings are in",
+   "owners": [
+    "Octopus"
+   ]
+  }
+ ],
+ "board": [
+  {
+   "id": "REQ-1",
+   "type": "required",
+   "state": "planned",
+   "owners": [
+    "Beaver",
+    "Hawk",
+    "Octopus"
+   ],
+   "title": "Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline"
+  },
+  {
+   "id": "REQ-2",
+   "type": "required",
+   "state": "planned",
+   "owners": [
+    "Octopus",
+    "Beaver"
+   ],
+   "title": "Show the release version in the health check and record every production deploy"
+  },
+  {
+   "id": "REQ-3",
+   "type": "required",
+   "state": "planned",
+   "owners": [
+    "Elephant",
+    "Honey Badger",
+    "Beaver"
+   ],
+   "title": "Security hardening (details private)"
+  },
+  {
+   "id": "REQ-4",
+   "type": "required",
+   "state": "planned",
+   "owners": [
+    "Honey Badger",
+    "Fox",
+    "Hawk"
+   ],
+   "title": "Security hardening (details private)"
+  },
+  {
+   "id": "REQ-5",
+   "type": "required",
+   "state": "planned",
+   "owners": [
+    "Honey Badger",
+    "Beaver"
+   ],
+   "title": "Security hardening (details private)"
+  },
+  {
+   "id": "REQ-6",
+   "type": "required",
+   "state": "planned",
+   "owners": [
+    "Honey Badger"
+   ],
+   "title": "Security hardening (details private)"
+  },
+  {
+   "id": "REQ-7",
+   "type": "required",
+   "state": "planned",
+   "owners": [
+    "Elephant",
+    "Octopus"
+   ],
+   "title": "Run database migrations as an explicit deploy step"
+  },
+  {
+   "id": "REQ-8",
+   "type": "required",
+   "state": "planned",
+   "owners": [
+    "Crow"
+   ],
+   "title": "Bring the status docs up to date"
+  },
+  {
+   "id": "REQ-9",
+   "type": "required",
+   "state": "planned",
+   "owners": [
+    "Octopus"
+   ],
+   "title": "Confirm scheduled backups and uptime checks run once Majd's settings are in"
+  },
+  {
+   "id": "FEAT-1",
+   "type": "feature",
+   "state": "awaiting-approval",
+   "owners": [
+    "Beaver",
+    "Fox",
+    "Crow",
+    "Hawk"
+   ],
+   "title": "No trial office gets locked out: trial-ending emails plus pay-path readiness (card or bank-transfer fallback)"
+  },
+  {
+   "id": "FEAT-2",
+   "type": "feature",
+   "state": "awaiting-approval",
+   "owners": [
+    "Dolphin",
+    "Fox",
+    "Beaver"
+   ],
+   "title": "Checkout funnel visibility plus a weekly aggregate baseline"
+  },
+  {
+   "id": "FEAT-3",
+   "type": "feature",
+   "state": "awaiting-approval",
+   "owners": [
+    "Spider",
+    "Fox"
+   ],
+   "title": "Public-site polish for search: unsupported ?lang= falls back to Hebrew, a real 404 screen, security.txt"
+  }
+ ],
+ "events": [
+  {
+   "time": "2026-11-03T08:30:00+02:00",
+   "from": "Owl",
+   "to": "Owl",
+   "type": "report",
+   "ticket": null,
+   "text": "Discovery report"
+  },
+  {
+   "time": "2026-11-03T09:10:00+02:00",
+   "from": "Octopus",
+   "to": "Owl",
+   "type": "report",
+   "ticket": null,
+   "text": "Discovery report"
+  },
+  {
+   "time": "2026-11-03T09:25:00+02:00",
+   "from": "Dolphin",
+   "to": "Owl",
+   "type": "report",
+   "ticket": null,
+   "text": "Discovery report"
+  },
+  {
+   "time": "2026-11-03T09:40:00+02:00",
+   "from": "Elephant",
+   "to": "Owl",
+   "type": "report",
+   "ticket": null,
+   "text": "Discovery report"
+  },
+  {
+   "time": "2026-11-03T10:05:00+02:00",
+   "from": "Hawk",
+   "to": "Owl",
+   "type": "report",
+   "ticket": null,
+   "text": "Discovery report"
+  },
+  {
+   "time": "2026-11-03T10:05:00+02:00",
+   "from": "Honey Badger",
+   "to": "Owl",
+   "type": "report",
+   "ticket": null,
+   "text": "Discovery report"
+  },
+  {
+   "time": "2026-11-03T11:00:00+02:00",
+   "from": "Owl",
+   "to": "Beaver",
+   "type": "assignment",
+   "ticket": "REQ-1",
+   "text": "Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline"
+  },
+  {
+   "time": "2026-11-03T11:02:00+02:00",
+   "from": "Owl",
+   "to": "Hawk",
+   "type": "assignment",
+   "ticket": "REQ-1",
+   "text": "Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline"
+  },
+  {
+   "time": "2026-11-03T11:05:00+02:00",
+   "from": "Owl",
+   "to": "Octopus",
+   "type": "assignment",
+   "ticket": "REQ-2",
+   "text": "Show the release version in the health check and record every production deploy"
+  },
+  {
+   "time": "2026-11-03T11:08:00+02:00",
+   "from": "Owl",
+   "to": "Elephant",
+   "type": "assignment",
+   "ticket": "REQ-3",
+   "text": "Security hardening (details private)"
+  },
+  {
+   "time": "2026-11-03T11:10:00+02:00",
+   "from": "Owl",
+   "to": "Honey Badger",
+   "type": "assignment",
+   "ticket": "REQ-4",
+   "text": "Security hardening (details private)"
+  },
+  {
+   "time": "2026-11-03T11:12:00+02:00",
+   "from": "Owl",
+   "to": "Crow",
+   "type": "assignment",
+   "ticket": "REQ-8",
+   "text": "Bring the status docs up to date"
+  },
+  {
+   "time": "2026-11-03T11:14:00+02:00",
+   "from": "Owl",
+   "to": "Dolphin",
+   "type": "assignment",
+   "ticket": "FEAT-2",
+   "text": "Checkout funnel visibility plus a weekly aggregate baseline"
+  },
+  {
+   "time": "2026-11-03T11:16:00+02:00",
+   "from": "Owl",
+   "to": "Fox",
+   "type": "assignment",
+   "ticket": "REQ-4",
+   "text": "Security hardening (details private)"
+  },
+  {
+   "time": "2026-11-03T11:18:00+02:00",
+   "from": "Owl",
+   "to": "Spider",
+   "type": "assignment",
+   "ticket": "FEAT-3",
+   "text": "Public-site polish for search: unsupported ?lang= falls back to Hebrew, a real 404 screen, security.txt"
+  },
+  {
+   "time": "2026-11-03T12:00:00+02:00",
+   "from": "Owl",
+   "to": "Majd",
+   "type": "approval-request",
+   "ticket": "FEAT-1",
+   "text": "No trial office gets locked out: trial-ending emails plus pay-path readiness (card or bank-transfer fallback)"
+  }
+ ],
+ "quality": {
+  "tests": {
+   "server": "red",
+   "serverNote": "2 calendar tests failing since 20 Oct",
+   "e2e": "—",
+   "e2eNote": "blocked behind server CI",
+   "smoke": "ok",
+   "smokeNote": "health/ready: database and storage OK"
+  },
+  "findings": {
+   "Sev1": 0,
+   "Sev2": 5,
+   "Sev3": 8,
+   "Sev4": 5
+  },
+  "deploys": [
+   {
+    "name": "deploy-netlify",
+    "result": "failure",
+    "when": "2026-10-24 17:10"
+   },
+   {
+    "name": "ci",
+    "result": "failure",
+    "when": "2026-10-24 17:10"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "failure",
+    "when": "2026-10-21 22:40"
+   },
+   {
+    "name": "ci",
+    "result": "failure",
+    "when": "2026-10-21 22:40"
+   },
+   {
+    "name": "ci",
+    "result": "failure",
+    "when": "2026-10-21 22:15"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "failure",
+    "when": "2026-10-21 22:15"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "failure",
+    "when": "2026-10-20 15:15"
+   },
+   {
+    "name": "ci",
+    "result": "failure",
+    "when": "2026-10-20 15:15"
+   },
+   {
+    "name": "ci",
+    "result": "failure",
+    "when": "2026-10-20 14:56"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "failure",
+    "when": "2026-10-20 14:56"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "success",
+    "when": "2026-10-16 15:40"
+   },
+   {
+    "name": "ci",
+    "result": "success",
+    "when": "2026-10-16 15:40"
+   },
+   {
+    "name": "ci",
+    "result": "success",
+    "when": "2026-10-16 15:15"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "success",
+    "when": "2026-10-16 15:15"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "success",
+    "when": "2026-10-16 15:02"
+   },
+   {
+    "name": "ci",
+    "result": "success",
+    "when": "2026-10-16 15:02"
+   },
+   {
+    "name": "ci",
+    "result": "failure",
+    "when": "2026-10-16 12:19"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "success",
+    "when": "2026-10-16 12:19"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "failure",
+    "when": "2026-10-16 02:19"
+   },
+   {
+    "name": "ci",
+    "result": "failure",
+    "when": "2026-10-16 02:19"
+   },
+   {
+    "name": "ci",
+    "result": "success",
+    "when": "2026-10-16 00:59"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "success",
+    "when": "2026-10-16 00:59"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "success",
+    "when": "2026-10-16 00:56"
+   },
+   {
+    "name": "ci",
+    "result": "cancelled",
+    "when": "2026-10-16 00:56"
+   },
+   {
+    "name": "ci",
+    "result": "failure",
+    "when": "2026-10-15 20:58"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "success",
+    "when": "2026-10-15 20:58"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "success",
+    "when": "2026-10-15 19:31"
+   },
+   {
+    "name": "ci",
+    "result": "success",
+    "when": "2026-10-15 19:31"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "success",
+    "when": "2026-10-15 16:09"
+   },
+   {
+    "name": "ci",
+    "result": "failure",
+    "when": "2026-10-15 16:09"
+   }
+  ]
+ },
+ "engineering": {
+  "velocity": "0 / 12",
+  "leadTime": "—",
+  "cfr": "—"
+ },
+ "next": {
+  "draft": [],
+  "carry": []
+ }
+}
