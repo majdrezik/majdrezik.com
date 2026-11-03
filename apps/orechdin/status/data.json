@@ -1,27 +1,27 @@
 {
  "sprint": "2026-W45",
- "day": 1,
- "phase": "Planning done",
- "updated": "3 Nov 2026",
+ "day": 2,
+ "phase": "Build",
+ "updated": "3 Nov 2026, build started",
  "goal": "Put the first paying office within reach: no trial office locked out at day 30, a release pipeline that is green and traceable, and backups that actually run.",
  "majdNote": "Approved FEAT-1",
  "teams": {
   "owl": {
    "status": "working",
-   "task": "Plan approved. Sending FEAT-1 to the Architect for design review",
+   "task": "Running the build: 5 work packages in parallel",
    "backlog": []
   },
   "elephant": {
-   "status": "idle",
-   "task": "Next: Security hardening (details private)",
+   "status": "reviewing",
+   "task": "Design review of all 5 work packages before code is written",
    "backlog": [
     "REQ-3",
     "REQ-7"
    ]
   },
   "beaver": {
-   "status": "idle",
-   "task": "Next: Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline",
+   "status": "working",
+   "task": "Calendar time-zone fix, release version in health check, trial reminder emails",
    "backlog": [
     "REQ-1",
     "REQ-2",
@@ -32,8 +32,8 @@
    ]
   },
   "fox": {
-   "status": "idle",
-   "task": "Next: Security hardening (details private)",
+   "status": "working",
+   "task": "Plan page: a clear way to pay when card payment isn't set up",
    "backlog": [
     "REQ-4",
     "FEAT-1",
@@ -42,8 +42,8 @@
    ]
   },
   "octopus": {
-   "status": "idle",
-   "task": "Next: Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline",
+   "status": "working",
+   "task": "Release version on deploys, explicit migration step",
    "backlog": [
     "REQ-1",
     "REQ-2",
@@ -53,7 +53,7 @@
   },
   "hawk": {
    "status": "idle",
-   "task": "Next: Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline",
+   "task": "Waiting for the first change to test",
    "backlog": [
     "REQ-1",
     "REQ-4",
@@ -61,15 +61,15 @@
    ]
   },
   "spider": {
-   "status": "idle",
-   "task": "Next: Public-site polish for search: unsupported ?lang= falls back to Hebrew, a real 404 screen, security.txt",
+   "status": "working",
+   "task": "Running the baseline test suite on the current code",
    "backlog": [
     "FEAT-3"
    ]
   },
   "badger": {
-   "status": "idle",
-   "task": "Next: Security hardening (details private)",
+   "status": "working",
+   "task": "Security hardening (details private)",
    "backlog": [
     "REQ-3",
     "REQ-4",
@@ -79,7 +79,7 @@
   },
   "crow": {
    "status": "idle",
-   "task": "Next: Bring the status docs up to date",
+   "task": "Waiting for the first change to review",
    "backlog": [
     "REQ-8",
     "FEAT-1"
@@ -87,7 +87,7 @@
   },
   "dolphin": {
    "status": "idle",
-   "task": "Next: Checkout funnel visibility plus a weekly aggregate baseline",
+   "task": "No ticket this sprint (funnel feature moved to backlog)",
    "backlog": [
     "FEAT-2"
    ]
@@ -209,7 +209,7 @@
   {
    "id": "REQ-1",
    "type": "required",
-   "state": "planned",
+   "state": "building",
    "owners": [
     "Beaver",
     "Hawk",
@@ -220,7 +220,7 @@
   {
    "id": "REQ-2",
    "type": "required",
-   "state": "planned",
+   "state": "building",
    "owners": [
     "Octopus",
     "Beaver"
@@ -230,7 +230,7 @@
   {
    "id": "REQ-3",
    "type": "required",
-   "state": "planned",
+   "state": "building",
    "owners": [
     "Elephant",
     "Honey Badger",
@@ -241,7 +241,7 @@
   {
    "id": "REQ-4",
    "type": "required",
-   "state": "planned",
+   "state": "building",
    "owners": [
     "Honey Badger",
     "Fox",
@@ -252,7 +252,7 @@
   {
    "id": "REQ-5",
    "type": "required",
-   "state": "planned",
+   "state": "building",
    "owners": [
     "Honey Badger",
     "Beaver"
@@ -262,7 +262,7 @@
   {
    "id": "REQ-6",
    "type": "required",
-   "state": "planned",
+   "state": "building",
    "owners": [
     "Honey Badger"
    ],
@@ -271,7 +271,7 @@
   {
    "id": "REQ-7",
    "type": "required",
-   "state": "planned",
+   "state": "building",
    "owners": [
     "Elephant",
     "Octopus"
@@ -281,7 +281,7 @@
   {
    "id": "REQ-8",
    "type": "required",
-   "state": "planned",
+   "state": "building",
    "owners": [
     "Crow"
    ],
@@ -299,7 +299,7 @@
   {
    "id": "FEAT-1",
    "type": "feature",
-   "state": "planned",
+   "state": "building",
    "owners": [
     "Beaver",
     "Fox",
@@ -469,6 +469,54 @@
    "type": "assignment",
    "ticket": "FEAT-1",
    "text": "Trial lock-out feature approved: design review, then build"
+  },
+  {
+   "time": "2026-11-03T19:10:00+02:00",
+   "from": "Owl",
+   "to": "Elephant",
+   "type": "assignment",
+   "ticket": null,
+   "text": "Review the designs of all work packages before building"
+  },
+  {
+   "time": "2026-11-03T19:11:00+02:00",
+   "from": "Owl",
+   "to": "Spider",
+   "type": "assignment",
+   "ticket": null,
+   "text": "Run the baseline test suite"
+  },
+  {
+   "time": "2026-11-03T19:12:00+02:00",
+   "from": "Owl",
+   "to": "Beaver",
+   "type": "assignment",
+   "ticket": "REQ-1",
+   "text": "Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline"
+  },
+  {
+   "time": "2026-11-03T19:13:00+02:00",
+   "from": "Owl",
+   "to": "Octopus",
+   "type": "assignment",
+   "ticket": "REQ-7",
+   "text": "Run database migrations as an explicit deploy step"
+  },
+  {
+   "time": "2026-11-03T19:14:00+02:00",
+   "from": "Owl",
+   "to": "Fox",
+   "type": "assignment",
+   "ticket": "FEAT-1",
+   "text": "No trial office gets locked out: trial-ending emails plus pay-path readiness (card or bank-transfer fallback)"
+  },
+  {
+   "time": "2026-11-03T19:15:00+02:00",
+   "from": "Owl",
+   "to": "Honey Badger",
+   "type": "assignment",
+   "ticket": "REQ-5",
+   "text": "Security hardening (details private)"
   }
  ],
  "quality": {
