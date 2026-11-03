@@ -1,27 +1,27 @@
 {
  "sprint": "2026-W45",
- "day": 2,
- "phase": "Build",
- "updated": "3 Nov 2026, build started",
+ "day": 5,
+ "phase": "Build done → hardening",
+ "updated": "2026-11-03T21:30:00+02:00",
  "goal": "Put the first paying office within reach: no trial office locked out at day 30, a release pipeline that is green and traceable, and backups that actually run.",
- "majdNote": "Approved FEAT-1",
+ "majdNote": "Build finished: all 5 work packages passed independent code review and QA. Combined branch tested; nothing deployed yet — release waits for the Day-7 go/no-go.",
  "teams": {
   "owl": {
    "status": "working",
-   "task": "Running the build: 5 work packages in parallel",
+   "task": "Build done; preparing hardening",
    "backlog": []
   },
   "elephant": {
-   "status": "reviewing",
-   "task": "Design review of all 5 work packages before code is written",
+   "status": "idle",
+   "task": "All designs reviewed",
    "backlog": [
     "REQ-3",
     "REQ-7"
    ]
   },
   "beaver": {
-   "status": "working",
-   "task": "Calendar time-zone fix, release version in health check, trial reminder emails",
+   "status": "idle",
+   "task": "Delivered: calendar fix, release version, trial reminders",
    "backlog": [
     "REQ-1",
     "REQ-2",
@@ -32,8 +32,8 @@
    ]
   },
   "fox": {
-   "status": "working",
-   "task": "Plan page: a clear way to pay when card payment isn't set up",
+   "status": "idle",
+   "task": "Delivered: plan-page payment options (he/en/ru)",
    "backlog": [
     "REQ-4",
     "FEAT-1",
@@ -43,7 +43,7 @@
   },
   "octopus": {
    "status": "working",
-   "task": "Release version on deploys, explicit migration step",
+   "task": "Combined branch green against today's baseline",
    "backlog": [
     "REQ-1",
     "REQ-2",
@@ -52,8 +52,8 @@
    ]
   },
   "hawk": {
-   "status": "idle",
-   "task": "Waiting for the first change to test",
+   "status": "working",
+   "task": "Next: end-to-end and phone-width checks",
    "backlog": [
     "REQ-1",
     "REQ-4",
@@ -62,14 +62,14 @@
   },
   "spider": {
    "status": "working",
-   "task": "Running the baseline test suite on the current code",
+   "task": "Next: full suite and browser checks",
    "backlog": [
     "FEAT-3"
    ]
   },
   "badger": {
    "status": "working",
-   "task": "Security hardening (details private)",
+   "task": "Next: security pass",
    "backlog": [
     "REQ-3",
     "REQ-4",
@@ -79,7 +79,7 @@
   },
   "crow": {
    "status": "idle",
-   "task": "Waiting for the first change to review",
+   "task": "Reviewed all 5 packages",
    "backlog": [
     "REQ-8",
     "FEAT-1"
@@ -87,7 +87,7 @@
   },
   "dolphin": {
    "status": "idle",
-   "task": "No ticket this sprint (funnel feature moved to backlog)",
+   "task": "Waiting for analytics access",
    "backlog": [
     "FEAT-2"
    ]
@@ -105,7 +105,8 @@
     "Hawk"
    ],
    "effort": "M",
-   "decision": "approved"
+   "decision": "approved",
+   "state": "in-test"
   },
   {
    "id": "FEAT-2",
@@ -209,7 +210,7 @@
   {
    "id": "REQ-1",
    "type": "required",
-   "state": "building",
+   "state": "in-test",
    "owners": [
     "Beaver",
     "Hawk",
@@ -220,7 +221,7 @@
   {
    "id": "REQ-2",
    "type": "required",
-   "state": "building",
+   "state": "in-test",
    "owners": [
     "Octopus",
     "Beaver"
@@ -230,7 +231,7 @@
   {
    "id": "REQ-3",
    "type": "required",
-   "state": "building",
+   "state": "in-test",
    "owners": [
     "Elephant",
     "Honey Badger",
@@ -241,7 +242,7 @@
   {
    "id": "REQ-4",
    "type": "required",
-   "state": "building",
+   "state": "in-test",
    "owners": [
     "Honey Badger",
     "Fox",
@@ -252,7 +253,7 @@
   {
    "id": "REQ-5",
    "type": "required",
-   "state": "building",
+   "state": "in-test",
    "owners": [
     "Honey Badger",
     "Beaver"
@@ -262,7 +263,7 @@
   {
    "id": "REQ-6",
    "type": "required",
-   "state": "building",
+   "state": "in-test",
    "owners": [
     "Honey Badger"
    ],
@@ -271,7 +272,7 @@
   {
    "id": "REQ-7",
    "type": "required",
-   "state": "building",
+   "state": "in-test",
    "owners": [
     "Elephant",
     "Octopus"
@@ -281,7 +282,7 @@
   {
    "id": "REQ-8",
    "type": "required",
-   "state": "building",
+   "state": "in-test",
    "owners": [
     "Crow"
    ],
@@ -290,7 +291,7 @@
   {
    "id": "REQ-9",
    "type": "required",
-   "state": "planned",
+   "state": "blocked",
    "owners": [
     "Octopus"
    ],
@@ -299,7 +300,7 @@
   {
    "id": "FEAT-1",
    "type": "feature",
-   "state": "building",
+   "state": "in-test",
    "owners": [
     "Beaver",
     "Fox",
@@ -517,22 +518,142 @@
    "type": "assignment",
    "ticket": "REQ-5",
    "text": "Security hardening (details private)"
+  },
+  {
+   "time": "2026-11-04T12:00:00+02:00",
+   "from": "Beaver",
+   "to": "Crow",
+   "type": "handoff",
+   "ticket": "REQ-1",
+   "text": "Ready for review: Fix calendar time-zone handling so CI goes green, then redeploy through the gated pipeline"
+  },
+  {
+   "time": "2026-11-04T12:00:00+02:00",
+   "from": "Beaver",
+   "to": "Crow",
+   "type": "handoff",
+   "ticket": "REQ-2",
+   "text": "Ready for review: Show the release version in the health check and record every production deploy"
+  },
+  {
+   "time": "2026-11-04T12:00:00+02:00",
+   "from": "Beaver",
+   "to": "Crow",
+   "type": "handoff",
+   "ticket": "REQ-3",
+   "text": "Ready for review: Security hardening (details private)"
+  },
+  {
+   "time": "2026-11-04T12:00:00+02:00",
+   "from": "Octopus",
+   "to": "Crow",
+   "type": "handoff",
+   "ticket": "REQ-4",
+   "text": "Ready for review: Security hardening (details private)"
+  },
+  {
+   "time": "2026-11-04T12:00:00+02:00",
+   "from": "Octopus",
+   "to": "Crow",
+   "type": "handoff",
+   "ticket": "REQ-7",
+   "text": "Ready for review: Run database migrations as an explicit deploy step"
+  },
+  {
+   "time": "2026-11-04T12:00:00+02:00",
+   "from": "Beaver",
+   "to": "Crow",
+   "type": "handoff",
+   "ticket": "FEAT-1",
+   "text": "Ready for review: No trial office gets locked out: trial-ending emails plus pay-path readiness (card or bank-transfer fallback)"
+  },
+  {
+   "time": "2026-11-05T10:00:00+02:00",
+   "from": "Crow",
+   "to": "Beaver",
+   "type": "review",
+   "ticket": "FEAT-1",
+   "text": "Changes requested: reminder timing and an edge case for credit-pack buyers"
+  },
+  {
+   "time": "2026-11-05T10:30:00+02:00",
+   "from": "Hawk",
+   "to": "Octopus",
+   "type": "review",
+   "ticket": "REQ-7",
+   "text": "Approved: Run database migrations as an explicit deploy step"
+  },
+  {
+   "time": "2026-11-05T11:00:00+02:00",
+   "from": "Crow",
+   "to": "Beaver",
+   "type": "review",
+   "ticket": "REQ-5",
+   "text": "Security hardening (details private)"
+  },
+  {
+   "time": "2026-11-06T10:00:00+02:00",
+   "from": "Beaver",
+   "to": "Crow",
+   "type": "fix",
+   "ticket": "FEAT-1",
+   "text": "Fix round done: reminders on day 23 and 29, credit-pack buyers included"
+  },
+  {
+   "time": "2026-11-06T14:00:00+02:00",
+   "from": "Crow",
+   "to": "Owl",
+   "type": "review",
+   "ticket": "FEAT-1",
+   "text": "Re-check approved"
+  },
+  {
+   "time": "2026-11-06T14:30:00+02:00",
+   "from": "Crow",
+   "to": "Owl",
+   "type": "review",
+   "ticket": "REQ-5",
+   "text": "Security hardening (details private)"
+  },
+  {
+   "time": "2026-11-06T15:00:00+02:00",
+   "from": "Owl",
+   "to": "Octopus",
+   "type": "blocker",
+   "ticket": "REQ-9",
+   "text": "Waiting on the product owner"
+  },
+  {
+   "time": "2026-11-07T12:00:00+02:00",
+   "from": "Octopus",
+   "to": "Owl",
+   "type": "report",
+   "ticket": "",
+   "text": "All 5 packages combined and tested: no new failures"
+  },
+  {
+   "time": "2026-11-07T12:30:00+02:00",
+   "from": "Owl",
+   "to": "Hawk",
+   "type": "assignment",
+   "ticket": "",
+   "text": "Code freeze: hardening starts"
   }
  ],
  "quality": {
   "tests": {
-   "server": "red",
-   "serverNote": "2 calendar tests failing since 20 Oct",
-   "e2e": "—",
-   "e2eNote": "blocked behind server CI",
+   "server": "green vs baseline",
+   "serverNote": "945 passed; remaining failures are the same as before the sprint (missing local test files)",
+   "e2e": "pending",
+   "e2eNote": "hardening day",
    "smoke": "ok",
-   "smokeNote": "health/ready: database and storage OK"
+   "smokeNote": "production healthy"
   },
   "findings": {
    "Sev1": 0,
-   "Sev2": 5,
-   "Sev3": 8,
-   "Sev4": 5
+   "Sev2": 3,
+   "Sev3": 25,
+   "Sev4": 33
   },
   "deploys": [
    {
@@ -685,7 +806,8 @@
     "result": "failure",
     "when": "2026-10-15 16:09"
    }
-  ]
+  ],
+  "fixedThisSprint": 15
  },
  "engineering": {
   "velocity": "0 / 12",
