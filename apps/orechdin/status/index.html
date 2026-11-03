@@ -9,7 +9,7 @@
 <link rel="icon" href="animals/owl.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Silkscreen&display=swap">
 <style>
 /* Layout: a night-time animal campus. Hero with a 3D carousel of the ten teams, then the org tree, the ticket pipeline with its gatekeepers, the event stream, features, quality, next sprint. One deliberate dark, saturated look. */
 :root{
@@ -164,6 +164,14 @@ h2 em{font-style:normal;color:var(--c,var(--sun))}
 .list h3{margin:0 0 8px;font:600 17px var(--f-display);color:var(--c)}
 .list ul{margin:0;padding-inline-start:18px;display:grid;gap:6px;font-size:13.5px;color:var(--soft)}
 
+.officebox{position:relative;border-radius:18px;padding:10px;background:#1b1638;border:3px solid #575eb0;box-shadow:0 0 0 3px #1b1638,0 24px 50px -20px #000}
+#office-canvas{display:block;width:100%;height:auto;aspect-ratio:400/232;image-rendering:pixelated;border-radius:6px}
+.otip{position:absolute;z-index:3;width:220px;padding:10px 12px;border-radius:8px;background:#1b1638;border:2px solid #ffc93c;font:12px var(--f-body);color:var(--text);pointer-events:none;box-shadow:4px 4px 0 #000}
+.otip b{display:block;font:400 13px "Silkscreen",var(--f-mono)}
+.otip span{display:block;color:var(--dim);font:11px var(--f-mono)}
+.otip p{margin:6px 0 0;color:var(--soft)}
+.oticker{display:flex;gap:10px;align-items:center;margin-top:10px;font:400 13px "Silkscreen",var(--f-mono);color:var(--soft);min-width:0}
+.oticker span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
 .mr{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;font:700 11px var(--f-display);color:#1b1040;background:linear-gradient(140deg,var(--sun),var(--pink))}
 footer{padding-block:40px calc(30px + env(safe-area-inset-bottom,0px));color:var(--dim);font-size:12.5px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
@@ -191,7 +199,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 <header class="bar"><div class="wrap">
   <a class="logo" href="#top"><img src="animals/owl.png" alt="">OrechDin R&amp;D</a>
   <span class="live"><i></i><span id="updated">loading…</span></span>
-  <nav aria-label="Sections"><a href="#org">Teams</a><a href="#pipeline">Pipeline</a><a href="#flow">Events</a><a href="#features">Features</a><a href="#quality">Quality</a><a href="#next">Next</a></nav>
+  <nav aria-label="Sections"><a href="#office">Office</a><a href="#org">Teams</a><a href="#pipeline">Pipeline</a><a href="#flow">Events</a><a href="#features">Features</a><a href="#quality">Quality</a><a href="#next">Next</a></nav>
 </div></header>
 
 <main id="top">
@@ -207,6 +215,16 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
       <div class="ring" id="ring"></div>
     </div>
   </div>
+
+  <section id="office"><div class="wrap">
+    <div class="sh"><div><h2>The <em style="--c:var(--sun)">office</em></h2>
+      <p class="sub">The teams at their desks, live. Busy teams type at their screens, reviewers read, a red "!" means blocked, and idle teams go for coffee. Messages between teams are acted out: the sender walks over to the other desk. Hover over an animal to see what it's doing.</p></div></div>
+    <div class="officebox">
+      <canvas id="office-canvas" role="img" aria-label="Pixel office with the ten teams at their desks"></canvas>
+      <div id="office-tip" class="otip" hidden></div>
+    </div>
+    <div class="oticker"><span class="chip" style="--c:var(--sun)">now</span><span id="office-ticker">Getting the office ready…</span></div>
+  </div></section>
 
   <section id="org"><div class="wrap">
     <div class="sh"><div><h2>Who reports to <em style="--c:var(--pink)">whom</em></h2>
@@ -268,6 +286,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
   <span>3D animals: <a href="https://github.com/microsoft/fluentui-emoji">Microsoft Fluent Emoji</a> (MIT, <a href="animals/LICENSE">license</a>)</span>
 </div></footer>
 
+<script src="office.js"></script>
 <script>
 const T={
   majd:{n:"Majd",role:"Product owner",c:"var(--sun)"},
@@ -373,7 +392,7 @@ function next(){
   const li=(a,e)=>a&&a.length?a.map(x=>h("li",{text:x})):[h("li",{text:e})];
   $("draft").replaceChildren(...li(D.next?.draft,"Written on day 7."));$("carry").replaceChildren(...li(D.next?.carry,"Nothing carried over yet."));
 }
-function render(){hero();org();pipe();stream();feats();quality();next()}
+function render(){hero();window.office&&office.update(D);org();pipe();stream();feats();quality();next()}
 
 async function load(){
   try{const r=await fetch("data.json?ts="+Math.floor(Date.now()/60000),{cache:"no-store"});if(!r.ok)throw 0;D=await r.json()}
