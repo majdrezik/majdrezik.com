@@ -228,7 +228,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 
   <section id="org"><div class="wrap">
     <div class="sh"><div><h2>Who reports to <em style="--c:var(--pink)">whom</em></h2>
-      <p class="sub">Majd approves the plan. Owl runs the sprint, Elephant reviews every design, and the builders ship. The four auditors on the right work like an outside firm: their contract depends on finding every real problem.</p></div></div>
+      <p class="sub">Majd approves the plan. The R&amp;D Manager runs the sprint, the Architect reviews every design, and the builders ship. The four quality teams on the right work like an outside firm: their contract depends on finding every real problem.</p></div></div>
     <div class="org" id="orgbox">
       <svg class="links" id="links" aria-hidden="true"></svg>
       <div class="tier" id="t0"></div>
@@ -236,7 +236,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
       <div class="tier" id="t2"></div>
       <div class="split">
         <div class="camp" style="--c:var(--mint)"><h3>Builders</h3><p>Write the code and run production</p><div class="tier" id="t3"></div></div>
-        <div class="camp" style="--c:var(--coral)"><h3>Independent auditors</h3><p>Nothing is done until they sign off</p><div class="tier" id="t4"></div></div>
+        <div class="camp" style="--c:var(--coral)"><h3>Independent quality teams</h3><p>Nothing is done until they sign off</p><div class="tier" id="t4"></div></div>
       </div>
       <div class="legend"><span><i style="background:var(--mint)"></i>working</span><span><i style="background:var(--sun)"></i>reviewing</span><span><i style="background:var(--bad)"></i>blocked</span><span><i style="background:var(--dim)"></i>idle</span><span><i style="background:var(--sky)"></i>moving line: a message in the last day</span></div>
     </div>
@@ -244,7 +244,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 
   <section id="pipeline"><div class="wrap">
     <div class="sh"><div><h2>How a ticket <em style="--c:var(--mint)">moves</em></h2>
-      <p class="sub">Each stage has a gatekeeper. A ticket is done only when Crow approved the code, Spider's tests cover it, Hawk verified it and Honey Badger signed off where security is involved.</p></div></div>
+      <p class="sub">Each stage has a gatekeeper. A ticket is done only when Code Review approved it, Test Automation covers it, QA verified it and Security signed off where security is involved.</p></div></div>
     <div class="pipe" id="pipe"></div>
   </div></section>
 
@@ -259,7 +259,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 
   <section id="features"><div class="wrap">
     <div class="sh"><div><h2>What we're <em style="--c:var(--orange)">building</em></h2>
-      <p class="sub">Owl's proposed features and their status. Majd approves or denies each one; required fixes start without approval.</p></div></div>
+      <p class="sub">The R&amp;D Manager's proposed features and their status. Majd approves or denies each one; required fixes start without approval.</p></div></div>
     <div class="feats" id="feats"></div>
     <div class="list" style="--c:var(--teal);margin-top:16px"><h3>Required work</h3><ul id="required"></ul></div>
   </div></section>
@@ -290,30 +290,31 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 <script>
 const T={
   majd:{n:"Majd",role:"Product owner",c:"var(--sun)"},
-  owl:{n:"Owl",role:"R&D Manager",c:"var(--sun)",img:"owl"},
-  elephant:{n:"Elephant",role:"Architecture",c:"var(--grape)",img:"elephant"},
-  beaver:{n:"Beaver",role:"Backend",c:"var(--orange)",img:"beaver"},
-  fox:{n:"Fox",role:"Frontend & UX",c:"var(--coral)",img:"fox"},
-  octopus:{n:"Octopus",role:"DevOps / SRE",c:"var(--pink)",img:"octopus"},
-  dolphin:{n:"Dolphin",role:"Data & Analytics",c:"var(--sky)",img:"dolphin"},
-  hawk:{n:"Hawk",role:"QA",c:"var(--rose)",img:"hawk"},
-  spider:{n:"Spider",role:"Test Automation",c:"var(--lime)",img:"spider"},
-  crow:{n:"Crow",role:"Code Review",c:"var(--teal)",img:"crow"},
-  badger:{n:"Honey Badger",role:"Security & Privacy",c:"var(--mint)",img:"badger"}
+  owl:{n:"R&D Manager",role:"Plans the sprint, decides",c:"var(--sun)",img:"owl"},
+  elephant:{n:"Architect",role:"Design reviews, tech debt",c:"var(--grape)",img:"elephant"},
+  beaver:{n:"Backend",role:"API, database, payments",c:"var(--orange)",img:"beaver"},
+  fox:{n:"Frontend & UX",role:"App screens, languages",c:"var(--coral)",img:"fox"},
+  octopus:{n:"DevOps",role:"Deploys, backups, uptime",c:"var(--pink)",img:"octopus"},
+  dolphin:{n:"Data & Analytics",role:"Metrics and funnels",c:"var(--sky)",img:"dolphin"},
+  hawk:{n:"QA",role:"Tests real flows by hand",c:"var(--rose)",img:"hawk"},
+  spider:{n:"Test Automation",role:"Automated test suites",c:"var(--lime)",img:"spider"},
+  crow:{n:"Code Review",role:"Reviews every change",c:"var(--teal)",img:"crow"},
+  badger:{n:"Security",role:"Security and privacy",c:"var(--mint)",img:"badger"}
 };
 const key=s=>{s=String(s||"").toLowerCase();if(s.includes("badger"))return"badger";if(s.includes("majd"))return"majd";return s.split(/[^a-z]/)[0]};
+const nm=s=>T[key(s)]?.n||s;
 const pic=k=>T[k]&&T[k].img?"animals/"+T[k].img+".png":"animals/owl.png";
 const $=id=>document.getElementById(id);
 const h=(t,a={},...kids)=>{const e=document.createElement(t);for(const[k,v]of Object.entries(a)){if(k==="text")e.textContent=v;else if(k==="style")e.style.cssText=v;else e.setAttribute(k,v)}kids.flat().forEach(c=>c!=null&&e.append(c));return e};
 const img=(k,alt)=>k==="majd"?h("span",{class:"mr",title:"Majd",text:"MR"}):h("img",{src:pic(k),alt:alt??T[k]?.n??"",loading:"lazy",width:"64",height:"64"});
 const DAYS=[["Discovery","1"],["Build","2"],["Build","3"],["Build","4"],["Build","5"],["Hardening","6"],["Release","7"]];
-const LANES=[["planned","Planned","owl","Owl plans",["planned","awaiting-approval"]],["building","Building","beaver","Builders",["building"]],["review","In review","crow","Crow reviews",["review","in-review"]],["test","In test","hawk","Hawk + Spider",["test","in-test"]],["done","Done","badger","Signed off",["done"]],["blocked","Blocked","octopus","Needs help",["blocked"]]];
+const LANES=[["planned","Planned","owl","R&D Manager plans",["planned","awaiting-approval"]],["building","Building","beaver","Backend, Frontend, DevOps",["building"]],["review","In review","crow","Code Review approves",["review","in-review"]],["test","In test","hawk","QA + Test Automation",["test","in-test"]],["done","Done","badger","Security signs off",["done"]],["blocked","Blocked","octopus","Needs help",["blocked"]]];
 const laneColor={planned:"var(--sun)",building:"var(--orange)",review:"var(--teal)",test:"var(--rose)",done:"var(--mint)",blocked:"var(--bad)"};
 let D={};
 
 function hero(){
   $("kicker").textContent=`Sprint ${D.sprint||"—"} · Day ${D.day||1} of 7 · ${D.phase||""}`;
-  $("goal").replaceChildren(h("b",{text:"Goal: "}),D.goal||"Owl is still writing the proposal.");
+  $("goal").replaceChildren(h("b",{text:"Goal: "}),D.goal||"The R&D Manager is still writing the proposal.");
   $("updated").textContent=D.updated?"updated "+D.updated:"live";
   $("days").replaceChildren(...DAYS.map(([l,n],i)=>h("div",{class:"day "+(i+1<(D.day||1)?"past":i+1===(D.day||1)?"now":"")},h("b",{text:"D"+n}),h("small",{text:l}))));
   const ks=Object.keys(T).filter(k=>T[k].img),R=210;
@@ -353,15 +354,15 @@ function pipe(){
   $("pipe").replaceChildren(...LANES.map(([k,n,who,sub,states])=>{const items=tk.filter(t=>states.includes(t.state));
     return h("div",{class:"lane",style:`--c:${laneColor[k]}`},
       h("header",{},img(who),h("div",{},h("b",{text:n}),h("small",{text:sub})),h("span",{class:"n",text:String(items.length)})),
-      ...(items.length?items.map(t=>h("div",{class:"tk"},h("span",{class:"id",text:t.id+(t.state==="awaiting-approval"?" · awaiting approval":"")}),h("span",{text:t.title}),h("span",{class:"who"},(t.owners||[]).map(o=>img(key(o),o))))):[h("span",{class:"none",text:"Nothing here"})]))}));
+      ...(items.length?items.map(t=>h("div",{class:"tk"},h("span",{class:"id",text:t.id+(t.state==="awaiting-approval"?" · awaiting approval":"")}),h("span",{text:t.title}),h("span",{class:"who"},(t.owners||[]).map(o=>img(key(o),nm(o)))))):[h("span",{class:"none",text:"Nothing here"})]))}));
 }
 const typeColor=t=>({handoff:"var(--sky)",review:"var(--teal)",finding:"var(--coral)",question:"var(--sun)",blocker:"var(--bad)",dispute:"var(--orange)",decision:"var(--grape)",report:"var(--mint)",assignment:"var(--pink)"}[t]||"var(--soft)");
 function stream(){
   const ev=(D.events||[]).slice().sort((a,b)=>String(b.time).localeCompare(String(a.time)));
   $("stream").replaceChildren(...(ev.length?ev.map(e=>{const a=key(e.from),b=key(e.to);
     return h("div",{class:"ev",style:`--c:${typeColor(e.type)}`},
-      h("div",{class:"pair"},img(a,e.from),h("span",{class:"arrow",text:"→"}),b==="all"||!T[b]?h("span",{class:"chip",text:e.to}):img(b,e.to)),
-      h("div",{},h("div",{class:"top"},h("b",{text:`${e.from} → ${e.to}`}),h("span",{class:"chip",style:`--c:${typeColor(e.type)}`,text:e.type||"note"}),e.ticket?h("span",{class:"chip",style:"--c:var(--dim)",text:e.ticket}):null,h("time",{text:String(e.time||"").replace("T"," ").slice(0,16)})),
+      h("div",{class:"pair"},img(a,nm(e.from)),h("span",{class:"arrow",text:"→"}),b==="all"||!T[b]?h("span",{class:"chip",text:e.to}):img(b,nm(e.to))),
+      h("div",{},h("div",{class:"top"},h("b",{text:`${nm(e.from)} → ${nm(e.to)}`}),h("span",{class:"chip",style:`--c:${typeColor(e.type)}`,text:e.type||"note"}),e.ticket?h("span",{class:"chip",style:"--c:var(--dim)",text:e.ticket}):null,h("time",{text:String(e.time||"").replace("T"," ").slice(0,16)})),
         e.text?h("p",{text:e.text}):null))}):[h("p",{class:"none",text:"No messages yet."})]));
   const cnt={};ev.forEach(e=>{[key(e.from),key(e.to)].forEach(k=>{if(T[k])cnt[k]=(cnt[k]||0)+1})});
   const top=Object.entries(cnt).sort((a,b)=>b[1]-a[1]).slice(0,8),max=top[0]?.[1]||1;
@@ -374,8 +375,8 @@ function feats(){
   const dec=d=>d==="approved"?["approved","var(--ok)"]:d==="denied"?["denied","var(--bad)"]:["awaiting Majd","var(--sun)"];
   $("feats").replaceChildren(...((D.features||[]).length?D.features.map((f,i)=>{const[dl,dc]=dec(f.decision);
     return h("article",{class:"feat",style:`--c:${fc[i%fc.length]}`},h("span",{class:"chip",style:`--c:${dc}`,text:dl}),h("h3",{text:f.title}),h("p",{text:f.userGets||""}),
-      h("div",{class:"foot"},h("span",{class:"who"},(f.owners||[]).map(o=>img(key(o),o))),h("span",{class:"chip",style:"--c:var(--soft)",text:"effort "+(f.effort||"?")})))}):[h("p",{class:"msg",text:"Owl's proposal will appear here."})]));
-  $("required").replaceChildren(...((D.required||[]).map(r=>h("li",{text:`${r.id} · ${r.title} (${(r.owners||[]).join(", ")})`}))));
+      h("div",{class:"foot"},h("span",{class:"who"},(f.owners||[]).map(o=>img(key(o),nm(o)))),h("span",{class:"chip",style:"--c:var(--soft)",text:"effort "+(f.effort||"?")})))}):[h("p",{class:"msg",text:"The R&D Manager's proposal will appear here."})]));
+  $("required").replaceChildren(...((D.required||[]).map(r=>h("li",{text:`${r.id} · ${r.title} (${(r.owners||[]).map(nm).join(", ")})`}))));
 }
 function quality(){
   const q=D.quality||{},t=q.tests||{},f=q.findings||{},e=D.engineering||{};

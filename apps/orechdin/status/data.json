@@ -8,7 +8,7 @@
  "teams": {
   "owl": {
    "status": "working",
-   "task": "Plan approved. Routing FEAT-1 to Elephant for design review",
+   "task": "Plan approved. Sending FEAT-1 to the Architect for design review",
    "backlog": []
   },
   "elephant": {

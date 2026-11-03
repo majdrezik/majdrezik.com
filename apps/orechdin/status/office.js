@@ -17,11 +17,12 @@
     white: "#ffffff", ink: "#1b1638", shadow: "rgba(20,10,40,.28)", glass: "rgba(160,220,255,.35)",
   };
   const TEAM = {
-    owl: { n: "Owl", c: "#ffc93c" }, elephant: { n: "Elephant", c: "#a78bfa" }, beaver: { n: "Beaver", c: "#ff9f43" },
-    fox: { n: "Fox", c: "#ff6b6b" }, octopus: { n: "Octopus", c: "#ff5fb7" }, dolphin: { n: "Dolphin", c: "#4cc9ff" },
-    hawk: { n: "Hawk", c: "#fb7185" }, spider: { n: "Spider", c: "#b6f23d" }, crow: { n: "Crow", c: "#2dd4bf" }, badger: { n: "Badger", c: "#3ee6a8" },
+    owl: { n: "R&D Manager", c: "#ffc93c" }, elephant: { n: "Architect", c: "#a78bfa" }, beaver: { n: "Backend", c: "#ff9f43" },
+    fox: { n: "Frontend", c: "#ff6b6b" }, octopus: { n: "DevOps", c: "#ff5fb7" }, dolphin: { n: "Data", c: "#4cc9ff" },
+    hawk: { n: "QA", c: "#fb7185" }, spider: { n: "Test Auto", c: "#b6f23d" }, crow: { n: "Code Review", c: "#2dd4bf" }, badger: { n: "Security", c: "#3ee6a8" },
   };
-  const ROLE = { owl: "R&D Manager", elephant: "Architecture", beaver: "Backend", fox: "Frontend & UX", octopus: "DevOps / SRE", dolphin: "Data & Analytics", hawk: "QA", spider: "Test Automation", crow: "Code Review", badger: "Security & Privacy" };
+  const ROLE = { owl: "Plans the sprint, decides", elephant: "Design reviews, tech debt", beaver: "API, database, payments", fox: "App screens, languages", octopus: "Deploys, backups, uptime", dolphin: "Metrics and funnels", hawk: "Tests real flows by hand", spider: "Automated test suites", crow: "Reviews every change", badger: "Security and privacy" };
+  const FULL = { fox: "Frontend & UX", dolphin: "Data & Analytics", spider: "Test Automation" };
 
   // Desks: x,y = desk top-left; door = where this zone meets the corridor.
   const DESKS = {
@@ -87,7 +88,8 @@
 
   function playEvent(e) {
     const a = key(e.from), b = key(e.to), type = e.type || "note";
-    const label = `${e.from} → ${e.to} · ${type}${e.ticket ? " · " + e.ticket : ""}`;
+    const nm = k => k === "majd" ? "Majd" : (FULL[k] || TEAM[k]?.n || k);
+    const label = `${nm(a)} → ${nm(b)} · ${type}${e.ticket ? " · " + e.ticket : ""}`;
     if (a === b && chars[a]) { say(chars[a], type, 3); ticker.textContent = label; return true; }
     if (chars[a] && !chars[a].busy && chars[b]) {
       const s = seat(b);
@@ -192,7 +194,8 @@
     if (moving) { const f = Math.floor(t * 8) % 2; R(c.x - 4, c.y - 1 + f, 3, 2, "#1b1638"); R(c.x + 1, c.y - f, 3, 2, "#1b1638"); }
     if (!moving && c.status === "blocked" && Math.floor(t * 2) % 2) { R(c.x - 2, y - 12, 4, 8, "#ff4d4d"); R(c.x - 2, y - 3, 4, 2, "#ff4d4d"); }
     ctx.font = FONT; const nm = TEAM[c.k].n, w = ctx.measureText(nm).width;
-    R(c.x - w / 2 - 2, c.y + 3, w + 4, 9, "rgba(27,22,56,.82)"); ctx.fillStyle = TEAM[c.k].c; ctx.fillText(nm, Math.round(c.x - w / 2), c.y + 10);
+    const lx = Math.round(Math.min(W - w - 3, Math.max(3, c.x - w / 2)));
+    R(lx - 2, c.y + 3, w + 4, 9, "rgba(27,22,56,.82)"); ctx.fillStyle = TEAM[c.k].c; ctx.fillText(nm, lx, c.y + 10);
     if (c.bubble) {
       ctx.font = FONT; const bw = ctx.measureText(c.bubble.text).width + 8, bx = Math.round(Math.min(W - bw - 2, Math.max(2, c.x - bw / 2))), by = y - 16;
       R(bx, by, bw, 12, C.ink); R(bx + 1, by + 1, bw - 2, 10, c.bubble.color || C.white); R(Math.round(c.x) - 1, by + 12, 3, 3, C.ink);
@@ -225,7 +228,7 @@
     if (!hit) { tip.hidden = true; cv.style.cursor = ""; return; }
     cv.style.cursor = "pointer";
     tip.replaceChildren();
-    const b = document.createElement("b"); b.textContent = TEAM[hit.k].n === "Badger" ? "Honey Badger" : TEAM[hit.k].n; b.style.color = TEAM[hit.k].c;
+    const b = document.createElement("b"); b.textContent = FULL[hit.k] || TEAM[hit.k].n; b.style.color = TEAM[hit.k].c;
     const s = document.createElement("span"); s.textContent = `${ROLE[hit.k]} · ${hit.status}`;
     const p = document.createElement("p"); p.textContent = hit.task || "No current task";
     tip.append(b, s, p); tip.hidden = false;
