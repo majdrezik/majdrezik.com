@@ -1,14 +1,14 @@
 {
  "sprint": "2026-W45",
- "day": 6,
- "phase": "Hardening",
- "updated": "2026-11-08T10:00:00+02:00",
+ "day": 7,
+ "phase": "Go / no-go",
+ "updated": "2026-11-09T09:00:00+02:00",
  "goal": "Put the first paying office within reach: no trial office locked out at day 30, a release pipeline that is green and traceable, and backups that actually run.",
- "majdNote": "Code freeze. Independent teams are testing the combined release: end-to-end, phone screens in 3 languages, security, rollback drill and speed.",
+ "majdNote": "Hardening passed: no blocking problems open. 3 serious issues found and fixed. The release is ready and waits for the product owner's OK.",
  "teams": {
   "owl": {
    "status": "working",
-   "task": "Running hardening; go/no-go tomorrow",
+   "task": "Go/no-go: release ready, waiting for the product owner",
    "backlog": []
   },
   "elephant": {
@@ -21,7 +21,7 @@
   },
   "beaver": {
    "status": "idle",
-   "task": "On call for blocker fixes",
+   "task": "Fixes landed",
    "backlog": [
     "REQ-1",
     "REQ-2",
@@ -33,7 +33,7 @@
   },
   "fox": {
    "status": "idle",
-   "task": "On call for blocker fixes",
+   "task": "Phone header fix landed",
    "backlog": [
     "REQ-4",
     "FEAT-1",
@@ -42,8 +42,8 @@
    ]
   },
   "octopus": {
-   "status": "working",
-   "task": "Rollback drill and speed check",
+   "status": "blocked",
+   "task": "Release waits for the product owner",
    "backlog": [
     "REQ-1",
     "REQ-2",
@@ -52,8 +52,8 @@
    ]
   },
   "hawk": {
-   "status": "working",
-   "task": "Phone and desktop checks in he/en/ru",
+   "status": "idle",
+   "task": "Phone and desktop checks done",
    "backlog": [
     "REQ-1",
     "REQ-4",
@@ -61,15 +61,15 @@
    ]
   },
   "spider": {
-   "status": "working",
-   "task": "Full end-to-end suite, new vs old",
+   "status": "idle",
+   "task": "End-to-end: 52 of 52 pass",
    "backlog": [
     "FEAT-3"
    ]
   },
   "badger": {
-   "status": "working",
-   "task": "Security and privacy pass",
+   "status": "idle",
+   "task": "Security pass done",
    "backlog": [
     "REQ-3",
     "REQ-4",
@@ -78,8 +78,8 @@
    ]
   },
   "crow": {
-   "status": "reviewing",
-   "task": "Reviewing how the packages were combined",
+   "status": "idle",
+   "task": "Fixes re-checked and approved",
    "backlog": [
     "REQ-8",
     "FEAT-1"
@@ -106,7 +106,7 @@
    ],
    "effort": "M",
    "decision": "approved",
-   "state": "in-test"
+   "state": "ready"
   },
   {
    "id": "FEAT-2",
@@ -210,7 +210,7 @@
   {
    "id": "REQ-1",
    "type": "required",
-   "state": "in-test",
+   "state": "done",
    "owners": [
     "Beaver",
     "Hawk",
@@ -221,7 +221,7 @@
   {
    "id": "REQ-2",
    "type": "required",
-   "state": "in-test",
+   "state": "done",
    "owners": [
     "Octopus",
     "Beaver"
@@ -231,7 +231,7 @@
   {
    "id": "REQ-3",
    "type": "required",
-   "state": "in-test",
+   "state": "done",
    "owners": [
     "Elephant",
     "Honey Badger",
@@ -242,7 +242,7 @@
   {
    "id": "REQ-4",
    "type": "required",
-   "state": "in-test",
+   "state": "done",
    "owners": [
     "Honey Badger",
     "Fox",
@@ -253,7 +253,7 @@
   {
    "id": "REQ-5",
    "type": "required",
-   "state": "in-test",
+   "state": "done",
    "owners": [
     "Honey Badger",
     "Beaver"
@@ -263,7 +263,7 @@
   {
    "id": "REQ-6",
    "type": "required",
-   "state": "in-test",
+   "state": "done",
    "owners": [
     "Honey Badger"
    ],
@@ -272,7 +272,7 @@
   {
    "id": "REQ-7",
    "type": "required",
-   "state": "in-test",
+   "state": "done",
    "owners": [
     "Elephant",
     "Octopus"
@@ -282,7 +282,7 @@
   {
    "id": "REQ-8",
    "type": "required",
-   "state": "in-test",
+   "state": "done",
    "owners": [
     "Crow"
    ],
@@ -300,7 +300,7 @@
   {
    "id": "FEAT-1",
    "type": "feature",
-   "state": "in-test",
+   "state": "done",
    "owners": [
     "Beaver",
     "Fox",
@@ -662,22 +662,62 @@
    "type": "assignment",
    "ticket": "",
    "text": "Hardening: review how the packages were combined"
+  },
+  {
+   "time": "2026-11-08T18:00:00+02:00",
+   "from": "Hawk",
+   "to": "Owl",
+   "type": "report",
+   "ticket": "FEAT-1",
+   "text": "Found: payment options hidden during a card-provider outage"
+  },
+  {
+   "time": "2026-11-08T18:05:00+02:00",
+   "from": "Spider",
+   "to": "Owl",
+   "type": "report",
+   "ticket": "",
+   "text": "End-to-end: one test needs updating for the new demo rules"
+  },
+  {
+   "time": "2026-11-08T21:00:00+02:00",
+   "from": "Beaver",
+   "to": "Crow",
+   "type": "fix",
+   "ticket": "FEAT-1",
+   "text": "Fixes ready: payment options, phone header, test update"
+  },
+  {
+   "time": "2026-11-09T08:00:00+02:00",
+   "from": "Crow",
+   "to": "Owl",
+   "type": "review",
+   "ticket": "",
+   "text": "Re-check approved: end-to-end 52 of 52"
+  },
+  {
+   "time": "2026-11-09T09:00:00+02:00",
+   "from": "Owl",
+   "to": "Majd",
+   "type": "decision",
+   "ticket": "",
+   "text": "Release ready — waiting for the go-ahead"
   }
  ],
  "quality": {
   "tests": {
    "server": "green vs baseline",
-   "serverNote": "945 passed; remaining failures are the same as before the sprint (missing local test files)",
-   "e2e": "pending",
-   "e2eNote": "hardening day",
+   "serverNote": "same results as before the sprint, plus ~130 new tests passing",
+   "e2e": "52/52",
+   "e2eNote": "full browser suite",
    "smoke": "ok",
    "smokeNote": "production healthy"
   },
   "findings": {
    "Sev1": 0,
    "Sev2": 3,
-   "Sev3": 25,
-   "Sev4": 33
+   "Sev3": 40,
+   "Sev4": 49
   },
   "deploys": [
    {
@@ -831,7 +871,7 @@
     "when": "2026-10-15 16:09"
    }
   ],
-  "fixedThisSprint": 15
+  "fixedThisSprint": 18
  },
  "engineering": {
   "velocity": "0 / 12",
