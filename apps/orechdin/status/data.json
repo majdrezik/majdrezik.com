@@ -1,19 +1,19 @@
 {
  "sprint": "2026-W45",
- "day": 5,
- "phase": "Build done → hardening",
- "updated": "2026-11-03T21:30:00+02:00",
+ "day": 6,
+ "phase": "Hardening",
+ "updated": "2026-11-08T10:00:00+02:00",
  "goal": "Put the first paying office within reach: no trial office locked out at day 30, a release pipeline that is green and traceable, and backups that actually run.",
- "majdNote": "Build finished: all 5 work packages passed independent code review and QA. Combined branch tested; nothing deployed yet — release waits for the Day-7 go/no-go.",
+ "majdNote": "Code freeze. Independent teams are testing the combined release: end-to-end, phone screens in 3 languages, security, rollback drill and speed.",
  "teams": {
   "owl": {
    "status": "working",
-   "task": "Build done; preparing hardening",
+   "task": "Running hardening; go/no-go tomorrow",
    "backlog": []
   },
   "elephant": {
    "status": "idle",
-   "task": "All designs reviewed",
+   "task": "Tech-debt notes for next sprint",
    "backlog": [
     "REQ-3",
     "REQ-7"
@@ -21,7 +21,7 @@
   },
   "beaver": {
    "status": "idle",
-   "task": "Delivered: calendar fix, release version, trial reminders",
+   "task": "On call for blocker fixes",
    "backlog": [
     "REQ-1",
     "REQ-2",
@@ -33,7 +33,7 @@
   },
   "fox": {
    "status": "idle",
-   "task": "Delivered: plan-page payment options (he/en/ru)",
+   "task": "On call for blocker fixes",
    "backlog": [
     "REQ-4",
     "FEAT-1",
@@ -43,7 +43,7 @@
   },
   "octopus": {
    "status": "working",
-   "task": "Combined branch green against today's baseline",
+   "task": "Rollback drill and speed check",
    "backlog": [
     "REQ-1",
     "REQ-2",
@@ -53,7 +53,7 @@
   },
   "hawk": {
    "status": "working",
-   "task": "Next: end-to-end and phone-width checks",
+   "task": "Phone and desktop checks in he/en/ru",
    "backlog": [
     "REQ-1",
     "REQ-4",
@@ -62,14 +62,14 @@
   },
   "spider": {
    "status": "working",
-   "task": "Next: full suite and browser checks",
+   "task": "Full end-to-end suite, new vs old",
    "backlog": [
     "FEAT-3"
    ]
   },
   "badger": {
    "status": "working",
-   "task": "Next: security pass",
+   "task": "Security and privacy pass",
    "backlog": [
     "REQ-3",
     "REQ-4",
@@ -78,8 +78,8 @@
    ]
   },
   "crow": {
-   "status": "idle",
-   "task": "Reviewed all 5 packages",
+   "status": "reviewing",
+   "task": "Reviewing how the packages were combined",
    "backlog": [
     "REQ-8",
     "FEAT-1"
@@ -638,6 +638,30 @@
    "type": "assignment",
    "ticket": "",
    "text": "Code freeze: hardening starts"
+  },
+  {
+   "time": "2026-11-08T09:30:00+02:00",
+   "from": "Owl",
+   "to": "Hawk",
+   "type": "assignment",
+   "ticket": "",
+   "text": "Hardening: test the combined release on phones in 3 languages"
+  },
+  {
+   "time": "2026-11-08T09:31:00+02:00",
+   "from": "Owl",
+   "to": "Octopus",
+   "type": "assignment",
+   "ticket": "",
+   "text": "Hardening: rollback drill and speed check"
+  },
+  {
+   "time": "2026-11-08T09:32:00+02:00",
+   "from": "Owl",
+   "to": "Crow",
+   "type": "assignment",
+   "ticket": "",
+   "text": "Hardening: review how the packages were combined"
   }
  ],
  "quality": {
