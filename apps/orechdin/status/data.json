@@ -1,10 +1,10 @@
 {
  "sprint": "2026-W45",
  "day": 7,
- "phase": "Go / no-go",
- "updated": "2026-11-09T09:00:00+02:00",
+ "phase": "Released",
+ "updated": "2026-11-09T17:20:00+02:00",
  "goal": "Put the first paying office within reach: no trial office locked out at day 30, a release pipeline that is green and traceable, and backups that actually run.",
- "majdNote": "Hardening passed: no blocking problems open. 3 serious issues found and fixed. The release is ready and waits for the product owner's OK.",
+ "majdNote": "Released to production on 9 November. The live site runs the new version, and the post-release check passed 67 of 67. Backups and uptime checks still wait on two settings from the product owner.",
  "teams": {
   "owl": {
    "status": "working",
@@ -702,6 +702,46 @@
    "type": "decision",
    "ticket": "",
    "text": "Release ready — waiting for the go-ahead"
+  },
+  {
+   "time": "2026-11-09T16:35:00+02:00",
+   "from": "Majd",
+   "to": "Owl",
+   "type": "decision",
+   "ticket": "",
+   "text": "Go: release approved"
+  },
+  {
+   "time": "2026-11-09T16:47:00+02:00",
+   "from": "Octopus",
+   "to": "Owl",
+   "type": "blocker",
+   "ticket": "",
+   "text": "Deploy stopped: the hosting access key had expired. Nothing changed on the live site"
+  },
+  {
+   "time": "2026-11-09T16:54:00+02:00",
+   "from": "Octopus",
+   "to": "Owl",
+   "type": "handoff",
+   "ticket": "",
+   "text": "New key in place, deploy re-run"
+  },
+  {
+   "time": "2026-11-09T17:01:00+02:00",
+   "from": "Hawk",
+   "to": "Owl",
+   "type": "review",
+   "ticket": "",
+   "text": "Live check passed: 67 of 67, the site reports the new version"
+  },
+  {
+   "time": "2026-11-09T17:05:00+02:00",
+   "from": "Owl",
+   "to": "Majd",
+   "type": "report",
+   "ticket": "",
+   "text": "Sprint released. Retro and next-sprint plan written"
   }
  ],
  "quality": {
@@ -720,6 +760,21 @@
    "Sev4": 49
   },
   "deploys": [
+   {
+    "name": "deploy-netlify",
+    "result": "success",
+    "when": "2026-11-09 16:54"
+   },
+   {
+    "name": "ci",
+    "result": "success",
+    "when": "2026-11-09 16:35"
+   },
+   {
+    "name": "deploy-netlify",
+    "result": "failure",
+    "when": "2026-11-09 16:35"
+   },
    {
     "name": "deploy-netlify",
     "result": "failure",
@@ -874,15 +929,20 @@
   "fixedThisSprint": 18
  },
  "engineering": {
-  "velocity": "0 / 12",
-  "leadTime": "—",
-  "cfr": "—"
+  "velocity": "9 / 10",
+  "leadTime": "6 days",
+  "cfr": "0 bad releases"
  },
  "next": {
   "draft": [
+   "Fix first: 31 smaller findings from hardening (email opt-out, demo protections, phone header, web-app dependencies, pipeline messages)",
+   "Turn on backups and uptime checks once the two settings are in",
+   "Card payments: test and switch on once the payment account is open",
    "Backlog: checkout funnel visibility (denied this week)",
    "Backlog: public-site polish for search (denied this week)"
   ],
-  "carry": []
+  "carry": [
+   "Backups and uptime checks: first real run (waiting on two settings)"
+  ]
  }
 }
